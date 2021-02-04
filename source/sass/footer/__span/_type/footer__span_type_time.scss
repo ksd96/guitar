@@ -1,0 +1,12 @@
+.footer__span_type_time {
+  &::before {
+    content: url("../img/icon-time.svg");
+
+    width: 9px;
+    height: 9px;
+
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+  }
+}

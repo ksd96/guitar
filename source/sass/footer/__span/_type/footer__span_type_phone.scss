@@ -1,0 +1,12 @@
+.footer__span_type_phone {
+  &::before {
+    content: url("../img/icon-phone.svg");
+
+    width: 7.5px;
+    height: 7.5px;
+
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+  }
+}

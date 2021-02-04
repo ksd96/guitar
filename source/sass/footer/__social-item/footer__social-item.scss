@@ -1,0 +1,9 @@
+.footer__social-item {
+  margin: 0;
+  padding: 0;
+  margin-right: 22px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
