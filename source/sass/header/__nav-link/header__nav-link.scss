@@ -1,0 +1,21 @@
+.header__nav-link {
+  margin: 0;
+  padding: 0;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: #474747;
+  }
+
+  &:active {
+    color: rgba(71, 71, 71, 0.5);
+  }
+}

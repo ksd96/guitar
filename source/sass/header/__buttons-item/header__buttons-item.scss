@@ -1,0 +1,33 @@
+.header__buttons-item {
+  margin: 0;
+  padding: 0;
+  margin-right: 10px;
+
+  fill: black;
+
+  &:hover,
+  &:focus {
+    fill: #474747;
+  }
+
+  &:active {
+    fill: rgba(71, 71, 71, 0.5);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:first-child {
+    stroke: black;
+
+    &:hover,
+    &:focus {
+      stroke: #474747;
+    }
+
+    &:active {
+      stroke: rgba(71, 71, 71, 0.5);
+    }
+  }
+}

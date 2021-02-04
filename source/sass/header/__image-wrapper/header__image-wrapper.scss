@@ -1,0 +1,15 @@
+.header__image-wrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  margin: 0;
+  padding: 0;
+  margin-top: -36px;
+
+  width: 100%;
+
+  background-image: url("../img/line-header.svg");
+  background-position: top 60px center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}

@@ -1,3 +1,16 @@
-h1 {
-  color: red;
-}
+@import "./normalize.scss";
+@import "../fonts/fonts.scss";
+@import "./page/page.scss";
+@import "./page/__sprite/page__sprite.scss";
+@import "./header/header.scss";
+@import "./header/__wrapper/header__wrapper.scss";
+@import "./header/__nav/header__nav.scss";
+@import "./header/__nav-list/header__nav-list.scss";
+@import "./header/__nav-item/header__nav-item.scss";
+@import "./header/__nav-link/header__nav-link.scss";
+@import "./header/__buttons-list/header__buttons-list.scss";
+@import "./header/__buttons-item/header__buttons-item.scss";
+@import "./header/__button/header__button.scss";
+@import "./header/__button-icon/header__button-icon.scss";
+@import "./header/__image-wrapper/header__image-wrapper.scss";
+@import "./header/__guitar-image/header__guitar-image.scss";

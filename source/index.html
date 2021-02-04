@@ -1,13 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+<body class="page">
+  <div class="page__sprite">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+  <header class="header">
+    <div class="header__wrapper">
+      <svg class="header__logo" width="67" height="70"><use xlink:href="#logo"></use></svg>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Каталог</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Где купить?</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">О компании</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Cервис-центры</a>
+          </li>
+        </ul>
+      </nav>
+      <ul class="header__buttons-list">
+        <li class="header__buttons-item">
+          <button class="header__button" type="button">
+            <svg class="header__button-icon" width="12" height="14"><use xlink:href="#icon-map"></use></svg>
+          </button>
+        </li>
+        <li class="header__buttons-item">
+          <button class="header__button" type="button">
+            <svg class="header__button-icon" width="14" height="14"><use xlink:href="#icon-search"></use></svg>
+          </button>
+        </li>
+        <li class="header__buttons-item">
+          <a href="#" class="header__button">
+            <svg class="header__button-icon" width="13" height="13"><use xlink:href="#icon-basket"></use></svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="header__image-wrapper">
+      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image">
+    </div>
+  </header>
 </body>
 </html>
