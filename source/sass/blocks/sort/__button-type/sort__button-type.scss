@@ -1,0 +1,22 @@
+.sort__button-type {
+  margin: 0;
+  padding: 5px;
+  margin-right: 24px;
+
+  border: 0;
+
+  background: inherit;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  color: #585757;
+
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,24 @@
+.card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  width: 89px;
+  height: 23px;
+
+  border-radius: 2px;
+  border: none;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+
+  cursor: pointer;
+}

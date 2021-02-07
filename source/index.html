@@ -55,14 +55,28 @@
     </div>
   </header>
   <main class="main">
-    <template id="cardTemplate">
-      <div class="card">
-        <!-- <img class="card__image" src="#" alt="гитара"> -->
-        <h3 class="card__title"></h3>
-        <p class="card__price"></p>
-        <p class="card__rating"></p>
+    <div class="main__wrapper">
+      <div class="main__wrapper-right">
+        <section class="sort">
+          <h2 class="sort__title">Сортировать:</h2>
+          <div class="sort__wrapper-type">
+            <button class="sort__button-type sort__button-type_type_price" type="button">по цене</button>
+            <button class="sort__button-type sort__button-type_type_popularity" type="button">по популярности</button>
+          </div>
+          <div class="sort__wrapper-buttons">
+            <button class="sort__button sort__button_type_min" type="button">
+              <svg class="sort__button-icon" width="10" height="13"><use xlink:href="#icon-min"></use></svg>
+            </button>
+            <button class="sort__button sort__button_type_max" type="button">
+              <svg class="sort__button-icon" width="10" height="13"><use xlink:href="#icon-max"></use></svg>
+            </button>
+          </div>
+        </section>
+        <section class="cards">
+          <ul class="cards__list"></ul>
+        </section>
       </div>
-    </template>
+    </div>
   </main>
   <footer class="footer">
     <div class="footer__wrapper-bottom">
@@ -153,6 +167,22 @@
       </div>
     </div>
   </footer>
+  <template id="cardTemplate">
+      <div class="card">
+        <img class="card__image" src="#" alt="гитара">
+        <div class="card__rating-wrapper">
+          <p class="card__rating"></p>
+        </div>
+        <div class="card__title-wrapper">
+          <h3 class="card__title"></h3>
+          <p class="card__price"></p>
+        </div>
+        <div class="card__buttons">
+          <button class="card__button card__button_type_more" type="button">Подробнее</button>
+          <button class="card__button card__button_type_buy" type="button">Купить</button>
+        </div>
+      </div>
+    </template>
   <script src="./js/main.js"></script>
 </body>
 </html>
