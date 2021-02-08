@@ -1,7 +1,9 @@
 @import "./normalize.scss";
 @import "../fonts/fonts.scss";
+
 @import "./blocks/page/page.scss";
 @import "./blocks/page/__sprite/page__sprite.scss";
+
 @import "./blocks/header/header.scss";
 @import "./blocks/header/__wrapper-top/header__wrapper-top.scss";
 @import "./blocks/header/__wrapper/header__wrapper.scss";
@@ -15,6 +17,7 @@
 @import "./blocks/header/__button-icon/header__button-icon.scss";
 @import "./blocks/header/__image-wrapper/header__image-wrapper.scss";
 @import "./blocks/header/__guitar-image/header__guitar-image.scss";
+
 @import "./blocks/footer/footer.scss";
 @import "./blocks/footer/__wrapper-bottom/footer__wrapper-bottom.scss";
 @import "./blocks/footer/__columns/footer__columns.scss";
@@ -32,6 +35,24 @@
 @import "./blocks/footer/__contacts-text/footer__contacts-text.scss";
 @import "./blocks/footer/__span/_type/footer__span_type_phone.scss";
 @import "./blocks/footer/__span/_type/footer__span_type_time.scss";
+
+@import "./blocks/main/main.scss";
+@import "./blocks/main/__wrapper/main__wrapper.scss";
+
+@import "./blocks/filter/filter.scss";
+@import "./blocks/filter/__title/filter__title.scss";
+@import "./blocks/filter/__price/filter__price.scss";
+@import "./blocks/filter/__price-wrapper/filter__price-wrapper.scss";
+@import "./blocks/filter/__price-input/filter__price-input.scss";
+@import "./blocks/filter/__price-span/filter__price-span.scss";
+@import "./blocks/filter/__type/filter__type.scss";
+@import "./blocks/filter/__list/filter__list.scss";
+@import "./blocks/filter/__item/filter__item.scss";
+@import "./blocks/filter/__label/filter__label.scss";
+@import "./blocks/filter/__input/filter__input.scss";
+@import "./blocks/filter/__name/filter__name.scss";
+@import "./blocks/filter/__submit/filter__submit.scss";
+
 @import "./blocks/card/card.scss";
 @import "./blocks/card/__image/card__image.scss";
 @import "./blocks/card/__rating-wrapper/card__rating-wrapper.scss";
@@ -43,6 +64,7 @@
 @import "./blocks/card/__button/card__button.scss";
 @import "./blocks/card/__button/_type/card__button_type_buy.scss";
 @import "./blocks/card/__button/_type/card__button_type_more.scss";
+
 @import "./blocks/sort/sort.scss";
 @import "./blocks/sort/__title/sort__title.scss";
 @import "./blocks/sort/__wrapper-type/sort__wrapper-type.scss";

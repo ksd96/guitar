@@ -1,0 +1,11 @@
+.filter__item {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 12px;
+
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

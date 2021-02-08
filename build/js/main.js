@@ -410,6 +410,39 @@
       return clone;
     }
 
+    // _getFilterItemType(filter) {
+    //   const template = document.querySelector(`#filterItemTemplate`);
+    //   const clone = template.content.cloneNode(true);
+    //   clone.querySelector('.filter__name').textContent = filter;
+    //   return clone;
+    // }
+
+    // renderFilterNumbers(filter) {
+    //   const container = document.querySelector(`.filter__list_numbers`);
+
+    //   while (container.firstChild) {
+    //     container.removeChild(container.lastChild);
+    //   }
+
+    //   filter.forEach((item) => {
+    //     const card = this._getFilterItemType(item);
+    //     container.appendChild(card);
+    //   });
+    // }
+
+    // renderFilterType(filter) {
+    //   const container = document.querySelector(`.filter__list_type`);
+
+    //   while (container.firstChild) {
+    //     container.removeChild(container.lastChild);
+    //   }
+
+    //   filter.forEach((item) => {
+    //     const card = this._getFilterItemType(item);
+    //     container.appendChild(card);
+    //   });
+    // }
+
     renderCards(guitars) {
       const container = document.querySelector('.cards__list');
 
@@ -439,21 +472,62 @@
     init() {
       this.renderGuitars();
       this.buttonsListner();
+      // this.renderFilterType();
+      // this.renderFilterNumbers();
     }
 
     buttonsListner() {
       this.buttonSortPrice.addEventListener(`click`, () => {
         this.changeButtonsStates(this.buttonSortPrice, `sort__button-type`);
+        this.sortCardsByPrice();
       });
       this.buttonSortPopularity.addEventListener(`click`, () => {
         this.changeButtonsStates(this.buttonSortPopularity, `sort__button-type`);
+        this.sortCardsByTPopularity();
       });
       this.buttonSortMin.addEventListener(`click`, () => {
         this.changeButtonsStates(this.buttonSortMin, `sort__button`);
+        this.sortCardsMinMax(`min`);
       });
       this.buttonSortMax.addEventListener(`click`, () => {
         this.changeButtonsStates(this.buttonSortMax, `sort__button`);
+        this.sortCardsMinMax(`max`);
       });
+    }
+
+    sortCardsByPrice() {
+      if (!this.buttonSortMin.classList.contains(`sort__button_active`) && !this.buttonSortMax.classList.contains(`sort__button_active`)) {
+        this.buttonSortMin.classList.add(`sort__button_active`);
+        this.store.setSortPrice(`min`);
+      } else if (this.buttonSortMin.classList.contains(`sort__button_active`)) {
+        this.store.setSortPrice(`min`);
+      } else if (this.buttonSortMax.classList.contains(`sort__button_active`)) {
+        this.store.setSortPrice(`max`);
+      }
+      this.view.renderCards(this.store.getSortPrice());
+    }
+
+    sortCardsByTPopularity() {
+      if (!this.buttonSortMin.classList.contains(`sort__button_active`) && !this.buttonSortMax.classList.contains(`sort__button_active`)) {
+        this.buttonSortMin.classList.add(`sort__button_active`);
+        this.store.setSortPopularity(`min`);
+      } else if (this.buttonSortMin.classList.contains(`sort__button_active`)) {
+        this.store.setSortPopularity(`min`);
+      } else if (this.buttonSortMax.classList.contains(`sort__button_active`)) {
+        this.store.setSortPopularity(`max`);
+      }
+      this.view.renderCards(this.store.getSortPopularity());
+    }
+
+    sortCardsMinMax(value) {
+      if ((!this.buttonSortPrice.classList.contains(`sort__button-type_active`) && !this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) || this.buttonSortPrice.classList.contains(`sort__button-type_active`)) {
+        this.buttonSortPrice.classList.add(`sort__button-type_active`);
+        this.store.setSortPrice(value);
+        this.view.renderCards(this.store.getSortPrice());
+      } else if (this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) {
+        this.store.setSortPopularity(value);
+        this.view.renderCards(this.store.getSortPopularity());
+      }
     }
 
     changeButtonsStates(item, name) {
@@ -463,6 +537,14 @@
       });
       item.classList.add(`${name}_active`);
     }
+
+    // renderFilterType() {
+    //   this.view.renderFilterType(this.store.getFiltersValue().type);
+    // }
+
+    // renderFilterNumbers() {
+    //   this.view.renderFilterNumbers(this.store.getFiltersValue().strings);
+    // }
 
     renderGuitars() {
       this.view.renderCards(this.store.getFilteredGuitars());

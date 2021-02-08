@@ -98,6 +98,40 @@
   </header>
   <main class="main">
     <div class="main__wrapper">
+      <form class="main__wrapper-filter filter">
+        <h2 class="filter__title">Фильтр</h2>
+        <div class="filter__price">
+          <h3 class="filter__title-item">Цена, ₽</h3>
+          <div class="filter__price-wrapper">
+            <input type="text" class="filter__price-input filter__price-input_type_min">
+            <span class="filter__price-span"></span>
+            <input type="text" class="filter__price-input filter__price-input_type_max">
+          </div>
+        </div>
+        <div class="filter__type">
+          <h3 class="filter__title-item">Тип гитар</h3>
+          <ul class="filter__list filter__list_type">
+            <li class="filter__item">
+              <label class="filter__label">
+                <input type="checkbox" class="filter__input">
+                <p class="filter__name">Акустические гитары</p>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="filter__type">
+          <h3 class="filter__title-item">Колличество струн</h3>
+          <ul class="filter__list filter__list_numbers">
+            <li class="filter__item">
+              <label class="filter__label">
+                <input type="checkbox" class="filter__input">
+                <p class="filter__name">4</p>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <button class="filter__submit" type="submit">показать</button>
+      </form>
       <div class="main__wrapper-right">
         <section class="sort">
           <h2 class="sort__title">Сортировать:</h2>
@@ -225,6 +259,14 @@
         </div>
       </div>
     </template>
+    <!-- <template id="filterItemTemplate">
+      <li class="filter__item">
+        <label class="filter__label">
+          <input type="checkbox" class="filter__input">
+          <p class="filter__name">Акустические гитры</p>
+        </label>
+      </li>
+    </template> -->
   <script src="./js/main.js"></script>
 </body>
 </html>
