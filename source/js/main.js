@@ -65,7 +65,7 @@ class Store {
       type: this.filters.type,
       strings: this.filters.strings,
       priceMin: this.filters.price.min,
-      priceMiax: this.filters.price.max,
+      priceMax: this.filters.price.max,
     };
 
     return filters;
@@ -154,48 +154,47 @@ class Store {
 }
 
 class View {
+  // получение карточки гитары
   _getGuitarCard(guitar) {
-    const template = document.querySelector('#cardTemplate');
+    const template = document.querySelector(`#cardTemplate`);
     const clone = template.content.cloneNode(true);
-    clone.querySelector('.card__title').textContent = guitar.name;
-    clone.querySelector('.card__price').textContent = guitar.price;
-    clone.querySelector('.card__rating').textContent = guitar.popularity;
+    clone.querySelector(`.card__title`).textContent = guitar.name;
+    clone.querySelector(`.card__price`).textContent = guitar.price;
+    clone.querySelector(`.card__rating`).textContent = guitar.popularity;
     return clone;
   }
 
-  // _getFilterItemType(filter) {
-  //   const template = document.querySelector(`#filterItemTemplate`);
-  //   const clone = template.content.cloneNode(true);
-  //   clone.querySelector('.filter__name').textContent = filter;
-  //   return clone;
-  // }
+  // получение элемента фильтра
+  _getFilterItemType(filter, name) {
+    const template = document.querySelector(`#filterItemTemplate`);
+    const clone = template.content.cloneNode(true);
+    clone.querySelector(`.filter__name`).textContent = filter;
+    clone.querySelector(`.filter__input`).name = name;
+    clone.querySelector(`.filter__input`).value = filter;
+    return clone;
+  }
 
-  // renderFilterNumbers(filter) {
-  //   const container = document.querySelector(`.filter__list_numbers`);
+  // получшение кнопки пагинации
+  _getPageButton(number) {
+    const template = document.querySelector(`#pageItemTemplate`);
+    const clone = template.content.cloneNode(true);
+    clone.querySelector(`.pages__button`).textContent = number;
+    return clone;
+  }
 
-  //   while (container.firstChild) {
-  //     container.removeChild(container.lastChild);
-  //   }
+  // отрисовка элемента фильтра
+  renderFilterItems(filter, container, name) {
+    while (container.firstChild) {
+      container.removeChild(container.lastChild);
+    }
 
-  //   filter.forEach((item) => {
-  //     const card = this._getFilterItemType(item);
-  //     container.appendChild(card);
-  //   });
-  // }
+    filter.forEach((item) => {
+      const card = this._getFilterItemType(item, name);
+      container.appendChild(card);
+    });
+  }
 
-  // renderFilterType(filter) {
-  //   const container = document.querySelector(`.filter__list_type`);
-
-  //   while (container.firstChild) {
-  //     container.removeChild(container.lastChild);
-  //   }
-
-  //   filter.forEach((item) => {
-  //     const card = this._getFilterItemType(item);
-  //     container.appendChild(card);
-  //   });
-  // }
-
+  // отрисовка карточки гитары
   renderCards(guitars) {
     const container = document.querySelector('.cards__list');
 
@@ -210,6 +209,22 @@ class View {
       container.appendChild(card);
     });
   }
+
+  // отрисовка кнопки пагинации
+  renderPageButton(numbers) {
+    const container = document.querySelector('.pages__list');
+
+    // очищаем
+    while (container.firstChild) {
+      container.removeChild(container.lastChild);
+    }
+
+    // рисуем новые карточки
+    for (let i = 1; i <= numbers; i++) {
+      const button = this._getPageButton(i);
+      container.appendChild(button);
+    }
+  }
 }
 
 class Presenter {
@@ -220,35 +235,54 @@ class Presenter {
     this.buttonSortPopularity = document.querySelector(`.sort__button-type_type_popularity`);
     this.buttonSortMin = document.querySelector(`.sort__button_type_min`);
     this.buttonSortMax = document.querySelector(`.sort__button_type_max`);
+    this.containerFilterType = document.querySelector(`.filter__list_type`);
+    this.containerFilterNum = document.querySelector(`.filter__list_numbers`);
+    this.priceMin = document.querySelector(`.filter__price-input_type_min`);
+    this.priceMax = document.querySelector(`.filter__price-input_type_max`);
+    this.buttonSubmit = document.querySelector(`.filter__submit`);
   }
 
   init() {
-    this.renderGuitars();
-    this.buttonsListner();
-    // this.renderFilterType();
-    // this.renderFilterNumbers();
+    this._renderGuitars();
+    this._buttonsListner();
+    this._renderFilterItems(this.store.getFiltersValue().type, this.containerFilterType, `types`);
+    this._renderFilterItems(this.store.getFiltersValue().strings, this.containerFilterNum, `numbers`);
+    this._renderPrice();
+    this._priceFilterValid();
+    this._renderPageItems();
   }
 
-  buttonsListner() {
+  // пагинация
+  _renderPageItems() {
+    const numbers = +(this.store.getFilteredGuitars().length) / 9;
+    this.view.renderPageButton(numbers);
+  }
+
+  // слушатели на кнопки
+  _buttonsListner() {
     this.buttonSortPrice.addEventListener(`click`, () => {
-      this.changeButtonsStates(this.buttonSortPrice, `sort__button-type`);
-      this.sortCardsByPrice();
+      this._changeButtonsStates(this.buttonSortPrice, `sort__button-type`);
+      this._sortCardsByPrice();
     });
     this.buttonSortPopularity.addEventListener(`click`, () => {
-      this.changeButtonsStates(this.buttonSortPopularity, `sort__button-type`);
-      this.sortCardsByTPopularity();
+      this._changeButtonsStates(this.buttonSortPopularity, `sort__button-type`);
+      this._sortCardsByPopularity();
     });
     this.buttonSortMin.addEventListener(`click`, () => {
-      this.changeButtonsStates(this.buttonSortMin, `sort__button`);
-      this.sortCardsMinMax(`min`);
+      this._changeButtonsStates(this.buttonSortMin, `sort__button`);
+      this._sortCardsMinMax(`min`);
     });
     this.buttonSortMax.addEventListener(`click`, () => {
-      this.changeButtonsStates(this.buttonSortMax, `sort__button`);
-      this.sortCardsMinMax(`max`);
+      this._changeButtonsStates(this.buttonSortMax, `sort__button`);
+      this._sortCardsMinMax(`max`);
+    });
+    this.buttonSubmit.addEventListener(`click`, (evt) => {
+      this._getFilteredGuitars(evt);
     });
   }
 
-  sortCardsByPrice() {
+  // сортировка по цене
+  _sortCardsByPrice() {
     if (!this.buttonSortMin.classList.contains(`sort__button_active`) && !this.buttonSortMax.classList.contains(`sort__button_active`)) {
       this.buttonSortMin.classList.add(`sort__button_active`);
       this.store.setSortPrice(`min`);
@@ -260,7 +294,8 @@ class Presenter {
     this.view.renderCards(this.store.getSortPrice());
   }
 
-  sortCardsByTPopularity() {
+  // сортировка по популярности
+  _sortCardsByPopularity() {
     if (!this.buttonSortMin.classList.contains(`sort__button_active`) && !this.buttonSortMax.classList.contains(`sort__button_active`)) {
       this.buttonSortMin.classList.add(`sort__button_active`);
       this.store.setSortPopularity(`min`);
@@ -272,7 +307,8 @@ class Presenter {
     this.view.renderCards(this.store.getSortPopularity());
   }
 
-  sortCardsMinMax(value) {
+  // сортировка от меньшего к большему и наоборот
+  _sortCardsMinMax(value) {
     if ((!this.buttonSortPrice.classList.contains(`sort__button-type_active`) && !this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) || this.buttonSortPrice.classList.contains(`sort__button-type_active`)) {
       this.buttonSortPrice.classList.add(`sort__button-type_active`);
       this.store.setSortPrice(value);
@@ -283,7 +319,8 @@ class Presenter {
     }
   }
 
-  changeButtonsStates(item, name) {
+  // смена состояний у кнопок
+  _changeButtonsStates(item, name) {
     const buttons = document.querySelectorAll(`.${name}_active`);
     buttons.forEach((button) => {
       button.classList.remove(`${name}_active`);
@@ -291,15 +328,75 @@ class Presenter {
     item.classList.add(`${name}_active`);
   }
 
-  // renderFilterType() {
-  //   this.view.renderFilterType(this.store.getFiltersValue().type);
-  // }
+  // отрисовка фильтров по типу гитар и колличеству струн
+  _renderFilterItems(filter, container, name) {
+    this.view.renderFilterItems(filter, container, name);
+  }
 
-  // renderFilterNumbers() {
-  //   this.view.renderFilterNumbers(this.store.getFiltersValue().strings);
-  // }
+  // нажатие только на цифры
+  _pressOnlyNumbers(event) {
+    if (event.keyCode === 46 || event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 27 || (event.keyCode === 65 && event.ctrlKey === true) || (event.keyCode >= 35 && event.keyCode <= 39)) {
+      return;
+    } else {
+      if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+        event.preventDefault();
+      }
+    }
+  }
 
-  renderGuitars() {
+  // валидация фильтров по цене
+  _priceFilterValid() {
+    this.priceMin.addEventListener(`blur`, () => {
+      if (+this.priceMin.value < +this.store.getMinGuitarsPrice()) {
+        this.priceMin.value = this.store.getMinGuitarsPrice();
+      } else if (+this.priceMin.value >= +this.priceMax.value) {
+        this.priceMin.value = this.priceMax.value;
+      }
+    });
+    this.priceMax.addEventListener(`blur`, () => {
+      if (+this.priceMax.value <= +this.priceMin.value) {
+        this.priceMax.value = this.priceMin.value;
+      }
+    });
+
+    this.priceMin.addEventListener('keydown', (event) => {
+      this._pressOnlyNumbers(event);
+    });
+    this.priceMax.addEventListener('keydown', (event) => {
+      this._pressOnlyNumbers(event);
+    });
+  }
+
+  // отрисовка отфильтрованных карточек
+  _getFilteredGuitars(evt) {
+    evt.preventDefault();
+    const filterData = {};
+    filterData.type = [];
+    filterData.strings = [];
+    filterData.priceMin = this.priceMin.value;
+    filterData.priceMax = this.priceMax.value;
+    this.containerFilterType.querySelectorAll(`.filter__input`).forEach((item) => {
+      if (item.checked) {
+        filterData.type.push(item.value);
+      }
+    });
+    this.containerFilterNum.querySelectorAll(`.filter__input`).forEach((item) => {
+      if (item.checked) {
+        filterData.strings.push(+item.value);
+      }
+    });
+    this.store.setFilters(filterData);
+    this._renderGuitars();
+  }
+
+  // заполение минимального и максимального значений цены
+  _renderPrice() {
+    this.priceMin.value = this.store.getFiltersValue().priceMin;
+    this.priceMax.value = this.store.getFiltersValue().priceMax;
+  }
+
+  // отрисовка карточек
+  _renderGuitars() {
     this.view.renderCards(this.store.getFilteredGuitars());
   }
 

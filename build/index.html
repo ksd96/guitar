@@ -103,9 +103,9 @@
         <div class="filter__price">
           <h3 class="filter__title-item">Цена, ₽</h3>
           <div class="filter__price-wrapper">
-            <input type="text" class="filter__price-input filter__price-input_type_min">
+            <input type="text" class="filter__price-input filter__price-input_type_min" pattern="^[ 0-9]+$">
             <span class="filter__price-span"></span>
-            <input type="text" class="filter__price-input filter__price-input_type_max">
+            <input type="text" class="filter__price-input filter__price-input_type_max" pattern="^[ 0-9]+$">
           </div>
         </div>
         <div class="filter__type">
@@ -150,6 +150,10 @@
         </section>
         <section class="cards">
           <ul class="cards__list"></ul>
+        </section>
+        <section class="pages">
+          <ul class="pages__list"></ul>
+          <button class="pages__button-next" type="button">Далее</button>
         </section>
       </div>
     </div>
@@ -259,14 +263,19 @@
         </div>
       </div>
     </template>
-    <!-- <template id="filterItemTemplate">
+    <template id="filterItemTemplate">
       <li class="filter__item">
         <label class="filter__label">
-          <input type="checkbox" class="filter__input">
+          <input type="checkbox" class="filter__input" name="" value="">
           <p class="filter__name">Акустические гитры</p>
         </label>
       </li>
-    </template> -->
+    </template>
+    <template id="pageItemTemplate">
+      <li class="pages__item">
+        <button class="pages__button" type="button"></button>
+      </li>
+    </template>
   <script src="./js/main.js"></script>
 </body>
 </html>

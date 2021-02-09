@@ -3,7 +3,7 @@ const dataItems = {
     "id": 1,
     "article": "SO757575",
     "name": "Честер Bass",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 15,
     "strings": 7,
     "price": 17500
@@ -12,7 +12,7 @@ const dataItems = {
     "id": 2,
     "article": "TK129049",
     "name": "СURT Z300",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 9,
     "strings": 7,
     "price": 29500
@@ -21,7 +21,7 @@ const dataItems = {
     "id": 3,
     "article": "RO111111",
     "name": "Roman LX",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 21,
     "strings": 4,
     "price": 6800
@@ -30,7 +30,7 @@ const dataItems = {
     "id": 4,
     "article": "TK436457",
     "name": "СURT T300",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 15,
     "strings": 6,
     "price": 30000
@@ -39,7 +39,7 @@ const dataItems = {
     "id": 5,
     "article": "DI192138",
     "name": "Dania Super",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 5,
     "strings": 7,
     "price": 3500
@@ -48,7 +48,7 @@ const dataItems = {
     "id": 6,
     "article": "SO934345",
     "name": "Честер WX",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 17,
     "strings": 6,
     "price": 15300
@@ -57,7 +57,7 @@ const dataItems = {
     "id": 7,
     "article": "DI082347",
     "name": "Dania VX",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 5,
     "strings": 4,
     "price": 2200
@@ -66,7 +66,7 @@ const dataItems = {
     "id": 8,
     "article": "SO135646",
     "name": "Честер Plus",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 27,
     "strings": 4,
     "price": 30000
@@ -75,7 +75,7 @@ const dataItems = {
     "id": 9,
     "article": "VO154751",
     "name": "Виолана 300",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 3,
     "strings": 7,
     "price": 1700
@@ -84,7 +84,7 @@ const dataItems = {
     "id": 10,
     "article": "TK244556",
     "name": "СURT Clasic",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 20,
     "strings": 4,
     "price": 23000
@@ -93,7 +93,7 @@ const dataItems = {
     "id": 11,
     "article": "TK134663",
     "name": "СURT Z250",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 19,
     "strings": 4,
     "price": 18700
@@ -102,7 +102,7 @@ const dataItems = {
     "id": 12,
     "article": "SO123212",
     "name": "Честер 7X",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 30,
     "strings": 7,
     "price": 35000
@@ -111,7 +111,7 @@ const dataItems = {
     "id": 13,
     "article": "SO123234",
     "name": "Честер 6V",
-    "type": "electro",
+    "type": "Электрогитары",
     "popularity": 28,
     "strings": 6,
     "price": 14900
@@ -120,7 +120,7 @@ const dataItems = {
     "id": 14,
     "article": "VO519510",
     "name": "Виолана Mix",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 7,
     "strings": 6,
     "price": 7600
@@ -129,7 +129,7 @@ const dataItems = {
     "id": 15,
     "article": "VO457369",
     "name": "Виолана 250x",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 19,
     "strings": 6,
     "price": 6500
@@ -138,7 +138,7 @@ const dataItems = {
     "id": 16,
     "article": "FB625903",
     "name": "Фабио Лайт",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 26,
     "strings": 7,
     "price": 12000
@@ -147,7 +147,7 @@ const dataItems = {
     "id": 17,
     "article": "FB576948",
     "name": "Фабио L100",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 31,
     "strings": 7,
     "price": 9900
@@ -156,7 +156,7 @@ const dataItems = {
     "id": 18,
     "article": "LU012032",
     "name": "Liana Z200",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 28,
     "strings": 12,
     "price": 8900
@@ -165,7 +165,7 @@ const dataItems = {
     "id": 19,
     "article": "LU546853",
     "name": "Liana Z100",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 34,
     "strings": 12,
     "price": 10500
@@ -174,7 +174,7 @@ const dataItems = {
     "id": 20,
     "article": "LU458283",
     "name": "Liana Z300",
-    "type": "acoustic",
+    "type": "Акустические гитары",
     "popularity": 9,
     "strings": 6,
     "price": 13300
@@ -183,7 +183,7 @@ const dataItems = {
     "id": 21,
     "article": "RO324341",
     "name": "Roman RX",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 38,
     "strings": 4,
     "price": 4800
@@ -192,7 +192,7 @@ const dataItems = {
     "id": 22,
     "article": "RO214235",
     "name": "Roman TX",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 5,
     "strings": 4,
     "price": 1900
@@ -201,7 +201,7 @@ const dataItems = {
     "id": 23,
     "article": "DI132414",
     "name": "Dania U100",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 23,
     "strings": 4,
     "price": 2500
@@ -210,7 +210,7 @@ const dataItems = {
     "id": 24,
     "article": "DI934754",
     "name": "Dania WR",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 3,
     "strings": 4,
     "price": 3800
@@ -219,7 +219,7 @@ const dataItems = {
     "id": 25,
     "article": "DI034292",
     "name": "Dania LE",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 10,
     "strings": 4,
     "price": 4100
@@ -228,7 +228,7 @@ const dataItems = {
     "id": 26,
     "article": "MI193214",
     "name": "Mirana V10",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 14,
     "strings": 4,
     "price": 2700
@@ -237,7 +237,7 @@ const dataItems = {
     "id": 27,
     "article": "VO043244",
     "name": "MВиолана Mini",
-    "type": "ukulele",
+    "type": "Укулеле",
     "popularity": 29,
     "strings": 4,
     "price": 6700
