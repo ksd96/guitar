@@ -9,7 +9,8 @@
       "type": "Электрогитары",
       "popularity": 15,
       "strings": 7,
-      "price": 17500
+      "price": 17500,
+      "img": "./img/electro1.png"
     },
     "2": {
       "id": 2,
@@ -18,7 +19,8 @@
       "type": "Электрогитары",
       "popularity": 9,
       "strings": 7,
-      "price": 29500
+      "price": 29500,
+      "img": "./img/electro2.png"
     },
     "3": {
       "id": 3,
@@ -27,7 +29,8 @@
       "type": "Укулеле",
       "popularity": 21,
       "strings": 4,
-      "price": 6800
+      "price": 6800,
+      "img": "./img/ukulele.png"
     },
     "4": {
       "id": 4,
@@ -36,7 +39,8 @@
       "type": "Электрогитары",
       "popularity": 15,
       "strings": 6,
-      "price": 30000
+      "price": 30000,
+      "img": "./img/electro1.png"
     },
     "5": {
       "id": 5,
@@ -45,7 +49,8 @@
       "type": "Акустические гитары",
       "popularity": 5,
       "strings": 7,
-      "price": 3500
+      "price": 3500,
+      "img": "./img/acoustic.png"
     },
     "6": {
       "id": 6,
@@ -54,7 +59,8 @@
       "type": "Электрогитары",
       "popularity": 17,
       "strings": 6,
-      "price": 15300
+      "price": 15300,
+      "img": "./img/electro3.png"
     },
     "7": {
       "id": 7,
@@ -63,7 +69,8 @@
       "type": "Укулеле",
       "popularity": 5,
       "strings": 4,
-      "price": 2200
+      "price": 2200,
+      "img": "./img/ukulele.png"
     },
     "8": {
       "id": 8,
@@ -72,7 +79,8 @@
       "type": "Электрогитары",
       "popularity": 27,
       "strings": 4,
-      "price": 30000
+      "price": 30000,
+      "img": "./img/electro2.png"
     },
     "9": {
       "id": 9,
@@ -81,7 +89,8 @@
       "type": "Акустические гитары",
       "popularity": 3,
       "strings": 7,
-      "price": 1700
+      "price": 1700,
+      "img": "./img/acoustic.png"
     },
     "10": {
       "id": 10,
@@ -90,7 +99,8 @@
       "type": "Электрогитары",
       "popularity": 20,
       "strings": 4,
-      "price": 23000
+      "price": 23000,
+      "img": "./img/electro4.png"
     },
     "11": {
       "id": 11,
@@ -99,7 +109,8 @@
       "type": "Электрогитары",
       "popularity": 19,
       "strings": 4,
-      "price": 18700
+      "price": 18700,
+      "img": "./img/electro1.png"
     },
     "12": {
       "id": 12,
@@ -108,7 +119,8 @@
       "type": "Электрогитары",
       "popularity": 30,
       "strings": 7,
-      "price": 35000
+      "price": 35000,
+      "img": "./img/electro3.png"
     },
     "13": {
       "id": 13,
@@ -117,7 +129,8 @@
       "type": "Электрогитары",
       "popularity": 28,
       "strings": 6,
-      "price": 14900
+      "price": 14900,
+      "img": "./img/electro4.png"
     },
     "14": {
       "id": 14,
@@ -126,7 +139,8 @@
       "type": "Акустические гитары",
       "popularity": 7,
       "strings": 6,
-      "price": 7600
+      "price": 7600,
+      "img": "./img/acoustic.png"
     },
     "15": {
       "id": 15,
@@ -135,7 +149,8 @@
       "type": "Акустические гитары",
       "popularity": 19,
       "strings": 6,
-      "price": 6500
+      "price": 6500,
+      "img": "./img/acoustic.png"
     },
     "16": {
       "id": 16,
@@ -144,7 +159,8 @@
       "type": "Акустические гитары",
       "popularity": 26,
       "strings": 7,
-      "price": 12000
+      "price": 12000,
+      "img": "./img/acoustic.png"
     },
     "17": {
       "id": 17,
@@ -153,7 +169,8 @@
       "type": "Акустические гитары",
       "popularity": 31,
       "strings": 7,
-      "price": 9900
+      "price": 9900,
+      "img": "./img/acoustic.png"
     },
     "18": {
       "id": 18,
@@ -162,7 +179,8 @@
       "type": "Акустические гитары",
       "popularity": 28,
       "strings": 12,
-      "price": 8900
+      "price": 8900,
+      "img": "./img/acoustic.png"
     },
     "19": {
       "id": 19,
@@ -171,7 +189,8 @@
       "type": "Акустические гитары",
       "popularity": 34,
       "strings": 12,
-      "price": 10500
+      "price": 10500,
+      "img": "./img/acoustic.png"
     },
     "20": {
       "id": 20,
@@ -180,7 +199,8 @@
       "type": "Акустические гитары",
       "popularity": 9,
       "strings": 6,
-      "price": 13300
+      "price": 13300,
+      "img": "./img/acoustic.png"
     },
     "21": {
       "id": 21,
@@ -189,7 +209,8 @@
       "type": "Укулеле",
       "popularity": 38,
       "strings": 4,
-      "price": 4800
+      "price": 4800,
+      "img": "./img/ukulele.png"
     },
     "22": {
       "id": 22,
@@ -198,7 +219,8 @@
       "type": "Укулеле",
       "popularity": 5,
       "strings": 4,
-      "price": 1900
+      "price": 1900,
+      "img": "./img/ukulele.png"
     },
     "23": {
       "id": 23,
@@ -207,7 +229,8 @@
       "type": "Укулеле",
       "popularity": 23,
       "strings": 4,
-      "price": 2500
+      "price": 2500,
+      "img": "./img/ukulele.png"
     },
     "24": {
       "id": 24,
@@ -216,7 +239,8 @@
       "type": "Укулеле",
       "popularity": 3,
       "strings": 4,
-      "price": 3800
+      "price": 3800,
+      "img": "./img/ukulele.png"
     },
     "25": {
       "id": 25,
@@ -225,7 +249,8 @@
       "type": "Укулеле",
       "popularity": 10,
       "strings": 4,
-      "price": 4100
+      "price": 4100,
+      "img": "./img/ukulele.png"
     },
     "26": {
       "id": 26,
@@ -234,7 +259,8 @@
       "type": "Укулеле",
       "popularity": 14,
       "strings": 4,
-      "price": 2700
+      "price": 2700,
+      "img": "./img/ukulele.png"
     },
     "27": {
       "id": 27,
@@ -243,7 +269,8 @@
       "type": "Укулеле",
       "popularity": 29,
       "strings": 4,
-      "price": 6700
+      "price": 6700,
+      "img": "./img/ukulele.png"
     }
   };
 
@@ -324,9 +351,15 @@
       return new Set(types);
     }
 
-    // отдает существующие типы гитар по колличеству струн
+    // отдает существующие типы гитар по количеству струн
     getStringsGuitar() {
       const strings = Object.values(this.guitars).map((guitar) => guitar.strings);
+      return new Set(strings);
+    }
+
+    // отдает типы гитар по количеству струн из определенного массива
+    getStringsGuitarArray(array) {
+      const strings = array.map((guitar) => guitar.strings);
       return new Set(strings);
     }
 
@@ -408,35 +441,49 @@
       clone.querySelector(`.card__title`).textContent = guitar.name;
       clone.querySelector(`.card__price`).textContent = guitar.price;
       clone.querySelector(`.card__rating`).textContent = guitar.popularity;
+      clone.querySelector(`.card__image`).src = guitar.img;
       return clone;
     }
 
     // получение элемента фильтра
-    _getFilterItemType(filter, name) {
+    _getFilterItemType(filter, name, clickHandler) {
       const template = document.querySelector(`#filterItemTemplate`);
       const clone = template.content.cloneNode(true);
       clone.querySelector(`.filter__name`).textContent = filter;
       clone.querySelector(`.filter__input`).name = name;
       clone.querySelector(`.filter__input`).value = filter;
+      if (name === `types`) {
+        clone.querySelector(`.filter__input`).addEventListener(`click`, () => {
+          if (clickHandler) {
+            clickHandler();
+          }
+        });
+      }
       return clone;
     }
 
     // получшение кнопки пагинации
-    _getPageButton(number) {
+    _getPageButton(number, clickHandler) {
       const template = document.querySelector(`#pageItemTemplate`);
       const clone = template.content.cloneNode(true);
       clone.querySelector(`.pages__button`).textContent = number;
+      clone.querySelector(`.pages__button`).addEventListener(`click`, () => {
+        clickHandler(number);
+      });
+      if (number === 1) {
+        clone.querySelector(`.pages__button`).classList.add(`pages__button_active`);
+      }
       return clone;
     }
 
     // отрисовка элемента фильтра
-    renderFilterItems(filter, container, name) {
+    renderFilterItems(filter, container, name, clickHandler) {
       while (container.firstChild) {
         container.removeChild(container.lastChild);
       }
 
       filter.forEach((item) => {
-        const card = this._getFilterItemType(item, name);
+        const card = this._getFilterItemType(item, name, clickHandler);
         container.appendChild(card);
       });
     }
@@ -458,7 +505,7 @@
     }
 
     // отрисовка кнопки пагинации
-    renderPageButton(numbers) {
+    renderPageButton(numbers, clickHandler) {
       const container = document.querySelector('.pages__list');
 
       // очищаем
@@ -467,8 +514,12 @@
       }
 
       // рисуем новые карточки
+      if (numbers <= 1) {
+        return;
+      }
+
       for (let i = 1; i <= numbers; i++) {
-        const button = this._getPageButton(i);
+        const button = this._getPageButton(i, clickHandler);
         container.appendChild(button);
       }
     }
@@ -487,6 +538,10 @@
       this.priceMin = document.querySelector(`.filter__price-input_type_min`);
       this.priceMax = document.querySelector(`.filter__price-input_type_max`);
       this.buttonSubmit = document.querySelector(`.filter__submit`);
+      this._renderPageNumberCards = this._renderPageNumberCards.bind(this);
+      this._currentData = this.store.getFilteredGuitars();
+      this.buttonNextPage = document.querySelector(`.pages__button-next`);
+      this._clickFilterItem = this._clickFilterItem.bind(this);
     }
 
     init() {
@@ -495,14 +550,36 @@
       this._renderFilterItems(this.store.getFiltersValue().type, this.containerFilterType, `types`);
       this._renderFilterItems(this.store.getFiltersValue().strings, this.containerFilterNum, `numbers`);
       this._renderPrice();
-      this._priceFilterValid();
-      this._renderPageItems();
     }
 
     // пагинация
-    _renderPageItems() {
-      const numbers = +(this.store.getFilteredGuitars().length) / 9;
-      this.view.renderPageButton(numbers);
+    _renderPageItems(cards) {
+      const numbers = +Math.ceil((cards.length) / 9);
+      if (numbers <= 1) {
+        this.buttonNextPage.style.display = `none`;
+      } else {
+        this.buttonNextPage.style.display = `block`;
+      }
+      this.view.renderPageButton(numbers, this._renderPageNumberCards);
+    }
+
+    // отрисовка карточек на определенной странице
+    _renderPageNumberCards(number) {
+      const valueOne = (number * 9) - 9;
+      const valueTwo = valueOne + 9;
+      const buttons = document.querySelectorAll(`.pages__button`);
+      this.view.renderCards(this._currentData.slice(valueOne, valueTwo));
+      this._changeButtonsStates(buttons[number - 1], `pages__button`);
+    }
+
+    // получение карточек на следующей странице
+    _getNextPage() {
+      const numbers = +Math.ceil((this._currentData.length) / 9);
+      const currentPage = document.querySelector(`.pages__button_active`).textContent;
+      if (numbers === +currentPage) {
+        return;
+      }
+      this._renderPageNumberCards(+currentPage + 1);
     }
 
     // слушатели на кнопки
@@ -524,7 +601,13 @@
         this._sortCardsMinMax(`max`);
       });
       this.buttonSubmit.addEventListener(`click`, (evt) => {
+        evt.preventDefault();
         this._getFilteredGuitars(evt);
+        this._currentData = this.store.getFilteredGuitars();
+        this._renderGuitars();
+      });
+      this.buttonNextPage.addEventListener(`click`, () => {
+        this._getNextPage();
       });
     }
 
@@ -538,7 +621,9 @@
       } else if (this.buttonSortMax.classList.contains(`sort__button_active`)) {
         this.store.setSortPrice(`max`);
       }
-      this.view.renderCards(this.store.getSortPrice());
+      this.view.renderCards(this.store.getSortPrice().slice(0, 9));
+      this._currentData = this.store.getSortPrice();
+      this._renderPageItems(this._currentData);
     }
 
     // сортировка по популярности
@@ -551,7 +636,9 @@
       } else if (this.buttonSortMax.classList.contains(`sort__button_active`)) {
         this.store.setSortPopularity(`max`);
       }
-      this.view.renderCards(this.store.getSortPopularity());
+      this.view.renderCards(this.store.getSortPopularity().slice(0, 9));
+      this._currentData = this.store.getSortPopularity();
+      this._renderPageItems(this._currentData);
     }
 
     // сортировка от меньшего к большему и наоборот
@@ -559,10 +646,14 @@
       if ((!this.buttonSortPrice.classList.contains(`sort__button-type_active`) && !this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) || this.buttonSortPrice.classList.contains(`sort__button-type_active`)) {
         this.buttonSortPrice.classList.add(`sort__button-type_active`);
         this.store.setSortPrice(value);
-        this.view.renderCards(this.store.getSortPrice());
+        this.view.renderCards(this.store.getSortPrice().slice(0, 9));
+        this._currentData = this.store.getSortPrice();
+        this._renderPageItems(this._currentData);
       } else if (this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) {
         this.store.setSortPopularity(value);
-        this.view.renderCards(this.store.getSortPopularity());
+        this.view.renderCards(this.store.getSortPopularity().slice(0, 9));
+        this._currentData = this.store.getSortPopularity();
+        this._renderPageItems(this._currentData);
       }
     }
 
@@ -575,9 +666,26 @@
       item.classList.add(`${name}_active`);
     }
 
+    // валидация фильтра по типу гитар
+    _clickFilterItem() {
+      this._getFilteredGuitars();
+      const typeGuitars = this.store.getStringsGuitarArray(this.store.getFilteredGuitars());
+      const typeGuitarsAll = document.querySelectorAll(`[name="numbers"]`);
+      typeGuitarsAll.forEach((item) => {
+        item.disabled = true;
+      });
+      typeGuitars.forEach((item) => {
+        typeGuitarsAll.forEach((item2) => {
+          if (item === +item2.value) {
+            item2.disabled = false;
+          }
+        });
+      });
+    }
+
     // отрисовка фильтров по типу гитар и колличеству струн
     _renderFilterItems(filter, container, name) {
-      this.view.renderFilterItems(filter, container, name);
+      this.view.renderFilterItems(filter, container, name, this._clickFilterItem);
     }
 
     // нажатие только на цифры
@@ -615,8 +723,7 @@
     }
 
     // отрисовка отфильтрованных карточек
-    _getFilteredGuitars(evt) {
-      evt.preventDefault();
+    _getFilteredGuitars() {
       const filterData = {};
       filterData.type = [];
       filterData.strings = [];
@@ -633,18 +740,19 @@
         }
       });
       this.store.setFilters(filterData);
-      this._renderGuitars();
     }
 
     // заполение минимального и максимального значений цены
     _renderPrice() {
       this.priceMin.value = this.store.getFiltersValue().priceMin;
       this.priceMax.value = this.store.getFiltersValue().priceMax;
+      this._priceFilterValid();
     }
 
     // отрисовка карточек
     _renderGuitars() {
-      this.view.renderCards(this.store.getFilteredGuitars());
+      this.view.renderCards(this.store.getFilteredGuitars().slice(0, 9));
+      this._renderPageItems(this.store.getFilteredGuitars());
     }
 
   }

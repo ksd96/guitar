@@ -6,7 +6,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 15,
     "strings": 7,
-    "price": 17500
+    "price": 17500,
+    "img": "./img/electro1.png"
   },
   "2": {
     "id": 2,
@@ -15,7 +16,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 9,
     "strings": 7,
-    "price": 29500
+    "price": 29500,
+    "img": "./img/electro2.png"
   },
   "3": {
     "id": 3,
@@ -24,7 +26,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 21,
     "strings": 4,
-    "price": 6800
+    "price": 6800,
+    "img": "./img/ukulele.png"
   },
   "4": {
     "id": 4,
@@ -33,7 +36,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 15,
     "strings": 6,
-    "price": 30000
+    "price": 30000,
+    "img": "./img/electro1.png"
   },
   "5": {
     "id": 5,
@@ -42,7 +46,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 5,
     "strings": 7,
-    "price": 3500
+    "price": 3500,
+    "img": "./img/acoustic.png"
   },
   "6": {
     "id": 6,
@@ -51,7 +56,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 17,
     "strings": 6,
-    "price": 15300
+    "price": 15300,
+    "img": "./img/electro3.png"
   },
   "7": {
     "id": 7,
@@ -60,7 +66,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 5,
     "strings": 4,
-    "price": 2200
+    "price": 2200,
+    "img": "./img/ukulele.png"
   },
   "8": {
     "id": 8,
@@ -69,7 +76,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 27,
     "strings": 4,
-    "price": 30000
+    "price": 30000,
+    "img": "./img/electro2.png"
   },
   "9": {
     "id": 9,
@@ -78,7 +86,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 3,
     "strings": 7,
-    "price": 1700
+    "price": 1700,
+    "img": "./img/acoustic.png"
   },
   "10": {
     "id": 10,
@@ -87,7 +96,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 20,
     "strings": 4,
-    "price": 23000
+    "price": 23000,
+    "img": "./img/electro4.png"
   },
   "11": {
     "id": 11,
@@ -96,7 +106,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 19,
     "strings": 4,
-    "price": 18700
+    "price": 18700,
+    "img": "./img/electro1.png"
   },
   "12": {
     "id": 12,
@@ -105,7 +116,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 30,
     "strings": 7,
-    "price": 35000
+    "price": 35000,
+    "img": "./img/electro3.png"
   },
   "13": {
     "id": 13,
@@ -114,7 +126,8 @@ const dataItems = {
     "type": "Электрогитары",
     "popularity": 28,
     "strings": 6,
-    "price": 14900
+    "price": 14900,
+    "img": "./img/electro4.png"
   },
   "14": {
     "id": 14,
@@ -123,7 +136,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 7,
     "strings": 6,
-    "price": 7600
+    "price": 7600,
+    "img": "./img/acoustic.png"
   },
   "15": {
     "id": 15,
@@ -132,7 +146,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 19,
     "strings": 6,
-    "price": 6500
+    "price": 6500,
+    "img": "./img/acoustic.png"
   },
   "16": {
     "id": 16,
@@ -141,7 +156,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 26,
     "strings": 7,
-    "price": 12000
+    "price": 12000,
+    "img": "./img/acoustic.png"
   },
   "17": {
     "id": 17,
@@ -150,7 +166,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 31,
     "strings": 7,
-    "price": 9900
+    "price": 9900,
+    "img": "./img/acoustic.png"
   },
   "18": {
     "id": 18,
@@ -159,7 +176,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 28,
     "strings": 12,
-    "price": 8900
+    "price": 8900,
+    "img": "./img/acoustic.png"
   },
   "19": {
     "id": 19,
@@ -168,7 +186,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 34,
     "strings": 12,
-    "price": 10500
+    "price": 10500,
+    "img": "./img/acoustic.png"
   },
   "20": {
     "id": 20,
@@ -177,7 +196,8 @@ const dataItems = {
     "type": "Акустические гитары",
     "popularity": 9,
     "strings": 6,
-    "price": 13300
+    "price": 13300,
+    "img": "./img/acoustic.png"
   },
   "21": {
     "id": 21,
@@ -186,7 +206,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 38,
     "strings": 4,
-    "price": 4800
+    "price": 4800,
+    "img": "./img/ukulele.png"
   },
   "22": {
     "id": 22,
@@ -195,7 +216,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 5,
     "strings": 4,
-    "price": 1900
+    "price": 1900,
+    "img": "./img/ukulele.png"
   },
   "23": {
     "id": 23,
@@ -204,7 +226,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 23,
     "strings": 4,
-    "price": 2500
+    "price": 2500,
+    "img": "./img/ukulele.png"
   },
   "24": {
     "id": 24,
@@ -213,7 +236,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 3,
     "strings": 4,
-    "price": 3800
+    "price": 3800,
+    "img": "./img/ukulele.png"
   },
   "25": {
     "id": 25,
@@ -222,7 +246,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 10,
     "strings": 4,
-    "price": 4100
+    "price": 4100,
+    "img": "./img/ukulele.png"
   },
   "26": {
     "id": 26,
@@ -231,7 +256,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 14,
     "strings": 4,
-    "price": 2700
+    "price": 2700,
+    "img": "./img/ukulele.png"
   },
   "27": {
     "id": 27,
@@ -240,7 +266,8 @@ const dataItems = {
     "type": "Укулеле",
     "popularity": 29,
     "strings": 4,
-    "price": 6700
+    "price": 6700,
+    "img": "./img/ukulele.png"
   }
 };
 
