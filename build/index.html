@@ -11,6 +11,8 @@
   <div class="page__sprite">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-basket" viewBox="0 0 14 14">
 <path d="M13.3798 4.59316C13.3329 4.5283 13.2746 4.47622 13.209 4.44052C13.1434 4.40482 13.072 4.38633 12.9998 4.38634H9.9998V2.02272C9.9998 1.55256 9.84177 1.10167 9.56046 0.769217C9.27916 0.436768 8.89763 0.25 8.4998 0.25H5.4998C5.10198 0.25 4.72045 0.436768 4.43914 0.769217C4.15784 1.10167 3.9998 1.55256 3.9998 2.02272V4.38634H0.999803C0.927326 4.38537 0.855537 4.40303 0.78941 4.43811C0.723283 4.47318 0.664399 4.52483 0.616838 4.58947C0.569277 4.65411 0.534176 4.73019 0.513968 4.81246C0.493759 4.89472 0.488926 4.98119 0.499803 5.06588L1.4398 12.2454C1.47596 12.5272 1.59709 12.7841 1.78085 12.9687C1.96461 13.1533 2.19864 13.2531 2.4398 13.2499H11.5698C11.811 13.2531 12.045 13.1533 12.2288 12.9687C12.4125 12.7841 12.5336 12.5272 12.5698 12.2454L13.4998 5.06588C13.5098 4.98152 13.5043 4.8956 13.4836 4.814C13.4629 4.73241 13.4275 4.65707 13.3798 4.59316ZM4.9998 2.02272C4.9998 1.866 5.05248 1.7157 5.14625 1.60488C5.24002 1.49407 5.36719 1.43181 5.4998 1.43181H8.4998C8.63241 1.43181 8.75959 1.49407 8.85336 1.60488C8.94712 1.7157 8.9998 1.866 8.9998 2.02272V4.38634H4.9998V2.02272ZM11.5698 12.0681H2.4298L1.5848 5.56815H12.4148L11.5698 12.0681Z"></path>
+</symbol><symbol id="icon-close" viewBox="0 0 12 12">
+<path d="M10.77 11.835L6.00004 7.05754L1.23004 11.835L0.165039 10.77L4.94254 6.00004L0.165039 1.23004L1.23004 0.165039L6.00004 4.94254L10.77 0.172539L11.8275 1.23004L7.05754 6.00004L11.8275 10.77L10.77 11.835Z" fill="#9F9E9E"></path>
 </symbol><symbol id="icon-fb" viewBox="0 0 24 24">
 <path d="M12 0C5.37294 0 0 5.40537 0 12.0724C0 18.0972 4.38764 23.0909 10.1254 24V15.5629H7.07711V12.0724H10.1254V9.41262C10.1254 6.38455 11.9172 4.71476 14.6571 4.71476C15.97 4.71476 17.3453 4.9502 17.3453 4.9502V7.91911H15.8284C14.3402 7.91911 13.8746 8.85119 13.8746 9.80622V12.07H17.2001L16.6685 15.5605H13.8746V23.9976C19.6124 23.0933 24 18.0984 24 12.0724C24 5.40537 18.6271 0 12 0Z" fill="white"></path>
 </symbol><symbol id="icon-inst" viewBox="0 0 24 24">
@@ -247,6 +249,48 @@
       </div>
     </div>
   </footer>
+  <div class="overlay ">
+      <div class="popup popup_added">
+          <button class="popup__close" type="button">
+            <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+          </button>
+          <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
+          <div class="popup__wrapper popup__wrapper_added">
+            <a href="#" class="popup__button popup__button_type_go-basket" type="button">Перейти в корзину</a>
+            <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
+          </div>
+        </div>
+  </div>
+  <template id="popupTemplate">
+    <div class="popup">
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Добавить товар в корзину</h2>
+      <div class="popup__wrapper">
+        <img src="#" alt="Фото гитары" class="popup__img">
+        <div class="popup__info">
+          <h3 class="popup__guitar-title">ГИТАРА <span class="popup__guitar-name"></span></h3>
+          <p class="popup__article">Артикул: <span class="popup__guitar-article"></span></p>
+          <p class="popup__type"><span class="popup__guitar-type"></span>, <span class="popup__guitar-strings"></span></p>
+          <p class="popup__price">Цена: <span class="popup__guitar-price"></span></p>
+        </div>
+        <button class="popup__button" type="button">Добавить в корзину</button>
+      </div>
+    </div>
+  </template>
+  <template id="popupAddedTemplate">
+    <div class="popup popup_added">
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
+      <div class="popup__wrapper popup__wrapper_added">
+        <a href="#" class="popup__button popup__button_type_go-basket" type="button">Перейти в корзину</a>
+        <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
+      </div>
+    </div>
+  </template>
   <template id="cardTemplate">
       <div class="card">
         <img class="card__image" src="#" alt="гитара">

@@ -205,6 +205,48 @@
       </div>
     </div>
   </footer>
+  <div class="overlay ">
+      <div class="popup popup_added">
+          <button class="popup__close" type="button">
+            <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+          </button>
+          <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
+          <div class="popup__wrapper popup__wrapper_added">
+            <a href="#" class="popup__button popup__button_type_go-basket" type="button">Перейти в корзину</a>
+            <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
+          </div>
+        </div>
+  </div>
+  <template id="popupTemplate">
+    <div class="popup">
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Добавить товар в корзину</h2>
+      <div class="popup__wrapper">
+        <img src="#" alt="Фото гитары" class="popup__img">
+        <div class="popup__info">
+          <h3 class="popup__guitar-title">ГИТАРА <span class="popup__guitar-name"></span></h3>
+          <p class="popup__article">Артикул: <span class="popup__guitar-article"></span></p>
+          <p class="popup__type"><span class="popup__guitar-type"></span>, <span class="popup__guitar-strings"></span></p>
+          <p class="popup__price">Цена: <span class="popup__guitar-price"></span></p>
+        </div>
+        <button class="popup__button" type="button">Добавить в корзину</button>
+      </div>
+    </div>
+  </template>
+  <template id="popupAddedTemplate">
+    <div class="popup popup_added">
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
+      <div class="popup__wrapper popup__wrapper_added">
+        <a href="#" class="popup__button popup__button_type_go-basket" type="button">Перейти в корзину</a>
+        <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
+      </div>
+    </div>
+  </template>
   <template id="cardTemplate">
       <div class="card">
         <img class="card__image" src="#" alt="гитара">

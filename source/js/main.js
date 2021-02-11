@@ -168,7 +168,70 @@ class View {
     clone.querySelector(`.card__price`).textContent = guitar.price;
     clone.querySelector(`.card__rating`).textContent = guitar.popularity;
     clone.querySelector(`.card__image`).src = guitar.img;
+    clone.querySelector(`.card__button_type_buy`).addEventListener(`click`, () => {
+      this.renderPopup(guitar);
+    });
     return clone;
+  }
+
+  // получение попапа с ссылкой в корзину
+  _getPopupAdded() {
+    const overlay = document.querySelector(`.overlay`);
+    const template = document.querySelector(`#popupAddedTemplate`);
+    const clone = template.content.cloneNode(true);
+    clone.querySelector(`.popup__button_type_go-shoping`).addEventListener(`click`, () => {
+      overlay.classList.remove(`overlay_opened`);
+    });
+    clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
+      overlay.classList.remove(`overlay_opened`);
+    });
+    return clone;
+  }
+
+  // отрисовка попапа с ссылкой в корзину
+  renderPopupAdded() {
+    const container = document.querySelector(`.overlay`);
+    container.classList.add(`overlay_opened`);
+
+    while (container.firstChild) {
+      container.removeChild(container.lastChild);
+    }
+
+    const popup = this._getPopupAdded();
+    container.appendChild(popup);
+  }
+
+  // получение попапа
+  _getPopup(guitar) {
+    const template = document.querySelector(`#popupTemplate`);
+    const clone = template.content.cloneNode(true);
+    clone.querySelector(`.popup__guitar-name`).textContent = guitar.name;
+    clone.querySelector(`.popup__guitar-price`).textContent = guitar.price;
+    clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
+    clone.querySelector(`.popup__guitar-type`).textContent = guitar.type;
+    clone.querySelector(`.popup__guitar-strings`).textContent = guitar.strings;
+    clone.querySelector(`.popup__img`).src = guitar.img;
+    clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
+      const overlay = document.querySelector(`.overlay`);
+      overlay.classList.remove(`overlay_opened`);
+    });
+    clone.querySelector(`.popup__button`).addEventListener(`click`, () => {
+      this.renderPopupAdded();
+    });
+    return clone;
+  }
+
+  // отрисовка попапа
+  renderPopup(guitar) {
+    const container = document.querySelector(`.overlay`);
+    container.classList.add(`overlay_opened`);
+
+    while (container.firstChild) {
+      container.removeChild(container.lastChild);
+    }
+
+    const popup = this._getPopup(guitar);
+    container.appendChild(popup);
   }
 
   // получение элемента фильтра

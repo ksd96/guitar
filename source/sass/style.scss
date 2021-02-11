@@ -83,3 +83,21 @@
 @import "./blocks/pages/__button/pages__button.scss";
 @import "./blocks/pages/__button/_active/pages__button_actiev.scss";
 @import "./blocks/pages/__button-next/pages__button-next.scss";
+
+@import "./blocks/overlay/overlay.scss";
+@import "./blocks/overlay/_opened/overlay_opened.scss";
+
+@import "./blocks/popup/popup.scss";
+@import "./blocks/popup/__close/popup__close.scss";
+@import "./blocks/popup/__title/popup__title.scss";
+@import "./blocks/popup/__wrapper/popup__wrapper.scss";
+@import "./blocks/popup/__img/popup__img.scss";
+@import "./blocks/popup/__info/popup__info.scss";
+@import "./blocks/popup/__guitar-title/popup__guitar-title.scss";
+@import "./blocks/popup/__article/popup__article.scss";
+@import "./blocks/popup/__type/popup__type.scss";
+@import "./blocks/popup/__price/popup__price.scss";
+@import "./blocks/popup/__button/popup__button.scss";
+@import "./blocks/popup/__wrapper/_added/popup__wrapper_added.scss";
+@import "./blocks/popup/__button/_type/popup__button_type_go-basket.scss";
+@import "./blocks/popup/__button/_type/popup__button_type_go-shoping.scss";
