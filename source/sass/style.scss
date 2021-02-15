@@ -3,8 +3,10 @@
 
 @import "./blocks/page/page.scss";
 @import "./blocks/page/__sprite/page__sprite.scss";
+@import "./blocks/page/_no-scrole/page_no-scrole.scss";
 
 @import "./blocks/header/header.scss";
+@import "./blocks/header/__logo-link/header__logo-link.scss";
 @import "./blocks/header/__wrapper-top/header__wrapper-top.scss";
 @import "./blocks/header/__wrapper/header__wrapper.scss";
 @import "./blocks/header/__nav/header__nav.scss";
@@ -17,6 +19,8 @@
 @import "./blocks/header/__button-icon/header__button-icon.scss";
 @import "./blocks/header/__image-wrapper/header__image-wrapper.scss";
 @import "./blocks/header/__guitar-image/header__guitar-image.scss";
+@import "./blocks/header/__button/_basket/header__button_basket.scss";
+@import "./blocks/header/__button-indicator/header__button-indicator.scss";
 
 @import "./blocks/footer/footer.scss";
 @import "./blocks/footer/__wrapper-bottom/footer__wrapper-bottom.scss";
@@ -38,6 +42,12 @@
 
 @import "./blocks/main/main.scss";
 @import "./blocks/main/__wrapper/main__wrapper.scss";
+@import "./blocks/main/__wrapper-right/main__wrapper-right.scss";
+@import "./blocks/main/__title-wrapper/main__title-wrapper.scss";
+@import "./blocks/main/__title/main__title.scss";
+@import "./blocks/main/__links-list/main__links-list.scss";
+@import "./blocks/main/__links-item/main__links-item.scss";
+@import "./blocks/main/__link/main__link.scss";
 
 @import "./blocks/filter/filter.scss";
 @import "./blocks/filter/__title/filter__title.scss";
@@ -64,6 +74,7 @@
 @import "./blocks/card/__button/card__button.scss";
 @import "./blocks/card/__button/_type/card__button_type_buy.scss";
 @import "./blocks/card/__button/_type/card__button_type_more.scss";
+@import "./blocks/card/__star/card__star.scss";
 
 @import "./blocks/sort/sort.scss";
 @import "./blocks/sort/__title/sort__title.scss";
@@ -99,5 +110,33 @@
 @import "./blocks/popup/__price/popup__price.scss";
 @import "./blocks/popup/__button/popup__button.scss";
 @import "./blocks/popup/__wrapper/_added/popup__wrapper_added.scss";
+@import "./blocks/popup/__wrapper-buttons/popup__wrapper-buttons.scss";
 @import "./blocks/popup/__button/_type/popup__button_type_go-basket.scss";
 @import "./blocks/popup/__button/_type/popup__button_type_go-shoping.scss";
+@import "./blocks/popup/__button/_type/popup__button_type_delete.scss";
+
+@import "./blocks/basket/basket.scss";
+@import "./blocks/basket/__list/basket__list.scss";
+@import "./blocks/basket/__ordering/basket__ordering.scss";
+@import "./blocks/basket/__promo-wrapper/basket__promo-wrapper.scss";
+@import "./blocks/basket/__title/basket__title.scss";
+@import "./blocks/basket/__subtitle/basket__subtitle.scss";
+@import "./blocks/basket/__code-wrapper/basket__code-wrapper.scss";
+@import "./blocks/basket/__code/basket__code.scss";
+@import "./blocks/basket/__code-submit/basket__code-submit.scss";
+@import "./blocks/basket/__checkout-wrapper/basket__checkout-wrapper.scss";
+@import "./blocks/basket/__price/basket__price.scss";
+@import "./blocks/basket/__checkout/basket__checkout.scss";
+
+@import "./blocks/guitar/guitar.scss";
+@import "./blocks/guitar/__delete/guitar__delete.scss";
+@import "./blocks/guitar/__img/guitar__img.scss";
+@import "./blocks/guitar/__wrapper/guitar__wrapper.scss";
+@import "./blocks/guitar/__title/guitar__title.scss";
+@import "./blocks/guitar/__article/guitar__article.scss";
+@import "./blocks/guitar/__type/guitar__type.scss";
+@import "./blocks/guitar/__price/guitar__price.scss";
+@import "./blocks/guitar/__buttons/guitar__buttons.scss";
+@import "./blocks/guitar/__button/guitar__button.scss";
+@import "./blocks/guitar/__quantity/guitar__quantity.scss";
+@import "./blocks/guitar/__full-price/guitar__full-price.scss";

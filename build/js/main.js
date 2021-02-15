@@ -1,278 +1,70 @@
 (function () {
   'use strict';
 
-  const dataItems = {
-    "1": {
-      "id": 1,
-      "article": "SO757575",
-      "name": "Честер Bass",
-      "type": "Электрогитары",
-      "popularity": 15,
-      "strings": 7,
-      "price": 17500,
-      "img": "./img/electro1.png"
-    },
-    "2": {
-      "id": 2,
-      "article": "TK129049",
-      "name": "СURT Z300",
-      "type": "Электрогитары",
-      "popularity": 9,
-      "strings": 7,
-      "price": 29500,
-      "img": "./img/electro2.png"
-    },
-    "3": {
-      "id": 3,
-      "article": "RO111111",
-      "name": "Roman LX",
-      "type": "Укулеле",
-      "popularity": 21,
-      "strings": 4,
-      "price": 6800,
-      "img": "./img/ukulele.png"
-    },
-    "4": {
-      "id": 4,
-      "article": "TK436457",
-      "name": "СURT T300",
-      "type": "Электрогитары",
-      "popularity": 15,
-      "strings": 6,
-      "price": 30000,
-      "img": "./img/electro1.png"
-    },
-    "5": {
-      "id": 5,
-      "article": "DI192138",
-      "name": "Dania Super",
-      "type": "Акустические гитары",
-      "popularity": 5,
-      "strings": 7,
-      "price": 3500,
-      "img": "./img/acoustic.png"
-    },
-    "6": {
-      "id": 6,
-      "article": "SO934345",
-      "name": "Честер WX",
-      "type": "Электрогитары",
-      "popularity": 17,
-      "strings": 6,
-      "price": 15300,
-      "img": "./img/electro3.png"
-    },
-    "7": {
-      "id": 7,
-      "article": "DI082347",
-      "name": "Dania VX",
-      "type": "Укулеле",
-      "popularity": 5,
-      "strings": 4,
-      "price": 2200,
-      "img": "./img/ukulele.png"
-    },
-    "8": {
-      "id": 8,
-      "article": "SO135646",
-      "name": "Честер Plus",
-      "type": "Электрогитары",
-      "popularity": 27,
-      "strings": 4,
-      "price": 30000,
-      "img": "./img/electro2.png"
-    },
-    "9": {
-      "id": 9,
-      "article": "VO154751",
-      "name": "Виолана 300",
-      "type": "Акустические гитары",
-      "popularity": 3,
-      "strings": 7,
-      "price": 1700,
-      "img": "./img/acoustic.png"
-    },
-    "10": {
-      "id": 10,
-      "article": "TK244556",
-      "name": "СURT Clasic",
-      "type": "Электрогитары",
-      "popularity": 20,
-      "strings": 4,
-      "price": 23000,
-      "img": "./img/electro4.png"
-    },
-    "11": {
-      "id": 11,
-      "article": "TK134663",
-      "name": "СURT Z250",
-      "type": "Электрогитары",
-      "popularity": 19,
-      "strings": 4,
-      "price": 18700,
-      "img": "./img/electro1.png"
-    },
-    "12": {
-      "id": 12,
-      "article": "SO123212",
-      "name": "Честер 7X",
-      "type": "Электрогитары",
-      "popularity": 30,
-      "strings": 7,
-      "price": 35000,
-      "img": "./img/electro3.png"
-    },
-    "13": {
-      "id": 13,
-      "article": "SO123234",
-      "name": "Честер 6V",
-      "type": "Электрогитары",
-      "popularity": 28,
-      "strings": 6,
-      "price": 14900,
-      "img": "./img/electro4.png"
-    },
-    "14": {
-      "id": 14,
-      "article": "VO519510",
-      "name": "Виолана Mix",
-      "type": "Акустические гитары",
-      "popularity": 7,
-      "strings": 6,
-      "price": 7600,
-      "img": "./img/acoustic.png"
-    },
-    "15": {
-      "id": 15,
-      "article": "VO457369",
-      "name": "Виолана 250x",
-      "type": "Акустические гитары",
-      "popularity": 19,
-      "strings": 6,
-      "price": 6500,
-      "img": "./img/acoustic.png"
-    },
-    "16": {
-      "id": 16,
-      "article": "FB625903",
-      "name": "Фабио Лайт",
-      "type": "Акустические гитары",
-      "popularity": 26,
-      "strings": 7,
-      "price": 12000,
-      "img": "./img/acoustic.png"
-    },
-    "17": {
-      "id": 17,
-      "article": "FB576948",
-      "name": "Фабио L100",
-      "type": "Акустические гитары",
-      "popularity": 31,
-      "strings": 7,
-      "price": 9900,
-      "img": "./img/acoustic.png"
-    },
-    "18": {
-      "id": 18,
-      "article": "LU012032",
-      "name": "Liana Z200",
-      "type": "Акустические гитары",
-      "popularity": 28,
-      "strings": 12,
-      "price": 8900,
-      "img": "./img/acoustic.png"
-    },
-    "19": {
-      "id": 19,
-      "article": "LU546853",
-      "name": "Liana Z100",
-      "type": "Акустические гитары",
-      "popularity": 34,
-      "strings": 12,
-      "price": 10500,
-      "img": "./img/acoustic.png"
-    },
-    "20": {
-      "id": 20,
-      "article": "LU458283",
-      "name": "Liana Z300",
-      "type": "Акустические гитары",
-      "popularity": 9,
-      "strings": 6,
-      "price": 13300,
-      "img": "./img/acoustic.png"
-    },
-    "21": {
-      "id": 21,
-      "article": "RO324341",
-      "name": "Roman RX",
-      "type": "Укулеле",
-      "popularity": 38,
-      "strings": 4,
-      "price": 4800,
-      "img": "./img/ukulele.png"
-    },
-    "22": {
-      "id": 22,
-      "article": "RO214235",
-      "name": "Roman TX",
-      "type": "Укулеле",
-      "popularity": 5,
-      "strings": 4,
-      "price": 1900,
-      "img": "./img/ukulele.png"
-    },
-    "23": {
-      "id": 23,
-      "article": "DI132414",
-      "name": "Dania U100",
-      "type": "Укулеле",
-      "popularity": 23,
-      "strings": 4,
-      "price": 2500,
-      "img": "./img/ukulele.png"
-    },
-    "24": {
-      "id": 24,
-      "article": "DI934754",
-      "name": "Dania WR",
-      "type": "Укулеле",
-      "popularity": 3,
-      "strings": 4,
-      "price": 3800,
-      "img": "./img/ukulele.png"
-    },
-    "25": {
-      "id": 25,
-      "article": "DI034292",
-      "name": "Dania LE",
-      "type": "Укулеле",
-      "popularity": 10,
-      "strings": 4,
-      "price": 4100,
-      "img": "./img/ukulele.png"
-    },
-    "26": {
-      "id": 26,
-      "article": "MI193214",
-      "name": "Mirana V10",
-      "type": "Укулеле",
-      "popularity": 14,
-      "strings": 4,
-      "price": 2700,
-      "img": "./img/ukulele.png"
-    },
-    "27": {
-      "id": 27,
-      "article": "VO043244",
-      "name": "MВиолана Mini",
-      "type": "Укулеле",
-      "popularity": 29,
-      "strings": 4,
-      "price": 6700,
-      "img": "./img/ukulele.png"
-    }
+  const Method = {
+    GET: `GET`,
+    POST: `POST`,
+    PUT: `PUT`,
+    DELETE: `DELETE`
   };
+
+  const toJSON = (response) => {
+    return response.json();
+  };
+
+  class API {
+    constructor(data) {
+      this._data = data;
+    }
+
+    getCards() {
+      return this._load({
+        url: this._data
+      })
+        .then(toJSON)
+        .then((data) => {
+          return data.guitars;
+        });
+    }
+
+    getCardsBasket() {
+      const cardsBasket = JSON.parse(localStorage.getItem('guitarsBasket'));
+      return cardsBasket.data;
+    }
+
+    addCardInBasket(guitar) {
+      const dataBasket = JSON.parse(localStorage.getItem(`guitarsBasket`));
+      if (dataBasket.data[guitar.id]) {
+        dataBasket.data[guitar.id].count++;
+      } else {
+        guitar.count = 1;
+        dataBasket.data[guitar.id] = guitar;
+      }
+      localStorage.setItem(`guitarsBasket`, JSON.stringify(dataBasket));
+    }
+
+    deleteGuitar(id, all) {
+      const dataBasket = JSON.parse(localStorage.getItem(`guitarsBasket`));
+      if (all === true) {
+        delete dataBasket.data[id];
+      } else if (all === false && dataBasket.data[id].count >= 2) {
+        dataBasket.data[id].count--;
+      } else {
+        delete dataBasket.data[id];
+      }
+      localStorage.setItem(`guitarsBasket`, JSON.stringify(dataBasket));
+    }
+
+    setCardsBasket(guitars) {
+      const dataBasket = JSON.parse(localStorage.getItem(`guitarsBasket`));
+      dataBasket.data = guitars;
+      localStorage.setItem(`guitarsBasket`, JSON.stringify(dataBasket));
+    }
+
+    _load({url, method = Method.GET, body = null, headers = new Headers()}) {
+      return fetch(url, { method, body, headers});
+    }
+  }
 
   class Store {
     constructor(guitars) {
@@ -434,8 +226,8 @@
   }
 
   class View {
-    // получение карточки гитары
-    _getGuitarCard(guitar) {
+     // получение карточки гитары
+    _getGuitarCard(guitar, clickHandler) {
       const template = document.querySelector(`#cardTemplate`);
       const clone = template.content.cloneNode(true);
       clone.querySelector(`.card__title`).textContent = guitar.name;
@@ -443,21 +235,24 @@
       clone.querySelector(`.card__rating`).textContent = guitar.popularity;
       clone.querySelector(`.card__image`).src = guitar.img;
       clone.querySelector(`.card__button_type_buy`).addEventListener(`click`, () => {
-        this.renderPopup(guitar);
+        this.renderPopup(guitar, clickHandler);
       });
       return clone;
     }
 
     // получение попапа с ссылкой в корзину
     _getPopupAdded() {
-      const overlay = document.querySelector(`.overlay`);
       const template = document.querySelector(`#popupAddedTemplate`);
       const clone = template.content.cloneNode(true);
+      const overlay = document.querySelector(`.overlay`);
+      const page = document.querySelector(`.page`);
       clone.querySelector(`.popup__button_type_go-shoping`).addEventListener(`click`, () => {
         overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
       });
       clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
         overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
       });
       return clone;
     }
@@ -476,7 +271,7 @@
     }
 
     // получение попапа
-    _getPopup(guitar) {
+    _getPopup(guitar, clickHandler) {
       const template = document.querySelector(`#popupTemplate`);
       const clone = template.content.cloneNode(true);
       clone.querySelector(`.popup__guitar-name`).textContent = guitar.name;
@@ -487,38 +282,47 @@
       clone.querySelector(`.popup__img`).src = guitar.img;
       clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
         const overlay = document.querySelector(`.overlay`);
+        const page = document.querySelector(`.page`);
         overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
       });
       clone.querySelector(`.popup__button`).addEventListener(`click`, () => {
         this.renderPopupAdded();
+        clickHandler(guitar);
       });
       return clone;
     }
 
     // отрисовка попапа
-    renderPopup(guitar) {
+    renderPopup(guitar, clickHandler) {
       const container = document.querySelector(`.overlay`);
+      const page = document.querySelector(`.page`);
       container.classList.add(`overlay_opened`);
+      page.classList.add(`page_no-scrole`);
+
 
       while (container.firstChild) {
         container.removeChild(container.lastChild);
       }
 
-      const popup = this._getPopup(guitar);
+      const popup = this._getPopup(guitar, clickHandler);
       container.appendChild(popup);
     }
 
     // получение элемента фильтра
-    _getFilterItemType(filter, name, clickHandler) {
+    _getFilterItemType(filter, name, clickHandler1, clickHandler2) {
       const template = document.querySelector(`#filterItemTemplate`);
       const clone = template.content.cloneNode(true);
       clone.querySelector(`.filter__name`).textContent = filter;
       clone.querySelector(`.filter__input`).name = name;
       clone.querySelector(`.filter__input`).value = filter;
+      clone.querySelector(`.filter__input`).addEventListener(`click`, () => {
+        clickHandler2();
+      });
       if (name === `types`) {
         clone.querySelector(`.filter__input`).addEventListener(`click`, () => {
-          if (clickHandler) {
-            clickHandler();
+          if (clickHandler1) {
+            clickHandler1();
           }
         });
       }
@@ -540,19 +344,19 @@
     }
 
     // отрисовка элемента фильтра
-    renderFilterItems(filter, container, name, clickHandler) {
+    renderFilterItems(filter, container, name, clickHandler1, clickHandler2) {
       while (container.firstChild) {
         container.removeChild(container.lastChild);
       }
 
       filter.forEach((item) => {
-        const card = this._getFilterItemType(item, name, clickHandler);
+        const card = this._getFilterItemType(item, name, clickHandler1, clickHandler2);
         container.appendChild(card);
       });
     }
 
     // отрисовка карточки гитары
-    renderCards(guitars) {
+    renderCards(guitars, clickHandler) {
       const container = document.querySelector('.cards__list');
 
       // очищаем
@@ -562,7 +366,7 @@
 
       // рисуем новые карточки
       guitars.forEach((guitar) => {
-        const card = this._getGuitarCard(guitar);
+        const card = this._getGuitarCard(guitar, clickHandler);
         container.appendChild(card);
       });
     }
@@ -571,12 +375,10 @@
     renderPageButton(numbers, clickHandler) {
       const container = document.querySelector('.pages__list');
 
-      // очищаем
       while (container.firstChild) {
         container.removeChild(container.lastChild);
       }
 
-      // рисуем новые карточки
       if (numbers <= 1) {
         return;
       }
@@ -589,9 +391,40 @@
   }
 
   class Presenter {
-    constructor(store, view) {
+    constructor(store, view, api) {
       this.store = store;
       this.view = view;
+      this.api = api;
+      this._clickFilterItem = this._clickFilterItem.bind(this);
+      this._renderPageNumberCards = this._renderPageNumberCards.bind(this);
+      this._addCardInBasket = this._addCardInBasket.bind(this);
+      this._getFilteredGuitars = this._getFilteredGuitars.bind(this);
+      this._currentData = this.store.getFilteredGuitars();
+      this.basketButton = document.querySelector(`.header__button_basket`);
+      this.buttonSortPrice = null;
+      this.buttonSortPopularity = null;
+      this.buttonSortMin = null;
+      this.buttonSortMax = null;
+      this.containerFilterType = null;
+      this.containerFilterNum = null;
+      this.priceMin = null;
+      this.priceMax = null;
+      this.buttonNextPage = null;
+    }
+
+    init() {
+      this._renderCatalogContainer();
+      this._getNumberGuitars();
+    }
+
+    // добавление карточки в корзину
+    _addCardInBasket(guitar) {
+      this.api.addCardInBasket(guitar);
+      this._getNumberGuitars();
+    }
+
+    // отрисовка каталога
+    _renderCatalogContainer() {
       this.buttonSortPrice = document.querySelector(`.sort__button-type_type_price`);
       this.buttonSortPopularity = document.querySelector(`.sort__button-type_type_popularity`);
       this.buttonSortMin = document.querySelector(`.sort__button_type_min`);
@@ -600,19 +433,26 @@
       this.containerFilterNum = document.querySelector(`.filter__list_numbers`);
       this.priceMin = document.querySelector(`.filter__price-input_type_min`);
       this.priceMax = document.querySelector(`.filter__price-input_type_max`);
-      this.buttonSubmit = document.querySelector(`.filter__submit`);
-      this._renderPageNumberCards = this._renderPageNumberCards.bind(this);
-      this._currentData = this.store.getFilteredGuitars();
       this.buttonNextPage = document.querySelector(`.pages__button-next`);
-      this._clickFilterItem = this._clickFilterItem.bind(this);
-    }
-
-    init() {
       this._renderGuitars();
-      this._buttonsListner();
       this._renderFilterItems(this.store.getFiltersValue().type, this.containerFilterType, `types`);
       this._renderFilterItems(this.store.getFiltersValue().strings, this.containerFilterNum, `numbers`);
       this._renderPrice();
+      this._buttonsListner();
+    }
+
+    // получение колличества гитар в корзине
+    _getNumberGuitars() {
+      const buttonIndicator = document.querySelector(`.header__button-indicator`);
+      let quantity = null;
+      Object.values(this.api.getCardsBasket()).forEach((item) => {
+        quantity = quantity + item.count;
+      });
+      if (quantity === 0) {
+        buttonIndicator.textContent = ``;
+      } else {
+        buttonIndicator.textContent = quantity;
+      }
     }
 
     // пагинация
@@ -663,15 +503,24 @@
         this._changeButtonsStates(this.buttonSortMax, `sort__button`);
         this._sortCardsMinMax(`max`);
       });
-      this.buttonSubmit.addEventListener(`click`, (evt) => {
-        evt.preventDefault();
-        this._getFilteredGuitars(evt);
-        this._currentData = this.store.getFilteredGuitars();
-        this._renderGuitars();
+      this.priceMin.addEventListener(`blur`, (evt) => {
+        this._getFilteredGuitars();
+        this._clickFilterItem();
+      });
+      this.priceMax.addEventListener(`blur`, (evt) => {
+        this._getFilteredGuitars();
+        this._clickFilterItem();
       });
       this.buttonNextPage.addEventListener(`click`, () => {
         this._getNextPage();
       });
+    }
+
+    // отрисовка отфильтрованных гитар
+    _getFilteredGuitars() {
+      this._setFilteredGuitars();
+      this._currentData = this.store.getFilteredGuitars();
+      this._renderGuitars();
     }
 
     // сортировка по цене
@@ -731,7 +580,7 @@
 
     // валидация фильтра по типу гитар
     _clickFilterItem() {
-      this._getFilteredGuitars();
+      this._setFilteredGuitars();
       const typeGuitars = this.store.getStringsGuitarArray(this.store.getFilteredGuitars());
       const typeGuitarsAll = document.querySelectorAll(`[name="numbers"]`);
       typeGuitarsAll.forEach((item) => {
@@ -748,7 +597,7 @@
 
     // отрисовка фильтров по типу гитар и колличеству струн
     _renderFilterItems(filter, container, name) {
-      this.view.renderFilterItems(filter, container, name, this._clickFilterItem);
+      this.view.renderFilterItems(filter, container, name, this._clickFilterItem, this._getFilteredGuitars);
     }
 
     // нажатие только на цифры
@@ -785,8 +634,8 @@
       });
     }
 
-    // отрисовка отфильтрованных карточек
-    _getFilteredGuitars() {
+    // применение фильтров
+    _setFilteredGuitars() {
       const filterData = {};
       filterData.type = [];
       filterData.strings = [];
@@ -814,17 +663,252 @@
 
     // отрисовка карточек
     _renderGuitars() {
-      this.view.renderCards(this.store.getFilteredGuitars().slice(0, 9));
+      this.view.renderCards(this.store.getFilteredGuitars().slice(0, 9), this._addCardInBasket);
       this._renderPageItems(this.store.getFilteredGuitars());
     }
-
   }
 
-  const myStore = new Store(dataItems);
-  const myView = new View();
-  const myPresenter = new Presenter(myStore, myView);
+  class StoreBasket {
+    constructor(guitars) {
+      this.guitars = guitars;
+    }
 
-  myPresenter.init();
+    getGuitars() {
+      return this.guitars;
+    }
+
+    setGuitars(guitars) {
+      this.guitars = guitars;
+    }
+
+    addGuitar(guitar) {
+      if (this.guitars[guitar.id]) {
+        this.guitars[guitar.id].count++;
+      } else {
+        guitar.count = 1;
+        this.guitars[guitar.id] = guitar;
+      }
+    }
+
+    deleteGuitar(id, all) {
+      if (all === true) {
+        delete this.guitars[id];
+      } else if (all === false && this.guitars[id].count >= 2) {
+        this.guitars[id].count--;
+      } else {
+        delete this.guitars[id];
+      }
+    }
+  }
+
+  class ViewBasket {
+    // получение элемента корзины
+    _getBasketCard(guitar, clickHandler1, clickHandler2) {
+      const template = document.querySelector(`#cardBasketTemplate`);
+      const clone = template.content.cloneNode(true);
+      clone.querySelector(`.guitar__name`).textContent = guitar.name;
+      clone.querySelector(`.guitar__price-content`).textContent = guitar.price;
+      clone.querySelector(`.guitar__article-content`).textContent = guitar.article;
+      clone.querySelector(`.guitar__img`).src = guitar.img;
+      clone.querySelector(`.guitar__type-content`).textContent = guitar.type;
+      clone.querySelector(`.guitar__strings`).textContent = guitar.strings;
+      clone.querySelector(`.guitar__quantity`).textContent = guitar.count;
+      clone.querySelector(`.guitar__full-price-content`).textContent = guitar.price * guitar.count;
+      clone.querySelector(`.guitar__delete`).addEventListener(`click`, (evt) => {
+        this.renderPopup(guitar, clickHandler1);
+      });
+      clone.querySelector(`.guitar__button_type_more`).addEventListener(`click`, (evt) => {
+        clickHandler2(evt, guitar);
+      });
+      clone.querySelector(`.guitar__button_type_less`).addEventListener(`click`, (evt) => {
+        if (guitar.count === 1) {
+          this.renderPopup(guitar, clickHandler1);
+        } else {
+          clickHandler1(evt, guitar.id, false);
+        }
+      });
+      return clone;
+    }
+
+    // получение попапа удаления товара
+    _getBasketPopup(guitar, clickhandler) {
+      const template = document.querySelector(`#popupBasketTemplate`);
+      const clone = template.content.cloneNode(true);
+      const page = document.querySelector(`.page`);
+      const overlay = document.querySelector(`.overlay`);
+      clone.querySelector(`.popup__guitar-name`).textContent = guitar.name;
+      clone.querySelector(`.popup__guitar-price`).textContent = guitar.price;
+      clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
+      clone.querySelector(`.popup__guitar-type`).textContent = guitar.type;
+      clone.querySelector(`.popup__guitar-strings`).textContent = guitar.strings;
+      clone.querySelector(`.popup__img`).src = guitar.img;
+      clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
+        overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
+      });
+      clone.querySelector(`.popup__button_type_go-shoping`).addEventListener(`click`, () => {
+        overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
+      });
+      clone.querySelector(`.popup__button_type_delete`).addEventListener(`click`, (evt) => {
+        overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
+        clickhandler(evt, guitar.id, true);
+      });
+      return clone;
+    }
+
+      // отрисовка попапа
+      renderPopup(guitar, clickhandler) {
+        const container = document.querySelector(`.overlay`);
+        const page = document.querySelector(`.page`);
+        container.classList.add(`overlay_opened`);
+        page.classList.add(`page_no-scrole`);
+
+        while (container.firstChild) {
+          container.removeChild(container.lastChild);
+        }
+
+        const popup = this._getBasketPopup(guitar, clickhandler);
+        container.appendChild(popup);
+      }
+
+    // отрисовка элемента корзины
+    renderBasketCards(guitars, clickHandler1, clickHandler2) {
+      const container = document.querySelector('.basket__list');
+      while (container.firstChild) {
+        container.removeChild(container.lastChild);
+      }
+      guitars.forEach((guitar) => {
+        const card = this._getBasketCard(guitar, clickHandler1, clickHandler2);
+        container.appendChild(card);
+      });
+    }
+  }
+
+  class PresenterBasket {
+    constructor(store, view, api) {
+      this.store = store;
+      this.view = view;
+      this.api = api;
+      this._deleteGuitar = this._deleteGuitar.bind(this);
+      this._addGuitar = this._addGuitar.bind(this);
+      this._code = null;
+    }
+
+    init() {
+      this._renderBasketGuitars();
+      this._getAllPrice();
+      this._initPromo();
+      this._getNumberGuitars();
+    }
+
+    _getNumberGuitars() {
+      const buttonIndicator = document.querySelector(`.header__button-indicator`);
+      let quantity = null;
+      Object.values(this.store.getGuitars()).forEach((item) => {
+        quantity = quantity + item.count;
+      });
+      if (quantity === 0) {
+        buttonIndicator.textContent = ``;
+      } else {
+        buttonIndicator.textContent = quantity;
+      }
+    }
+
+    _initPromo() {
+      const form = document.querySelector(`.basket__code-wrapper`);
+      const code = document.querySelector(`.basket__code`);
+      form.addEventListener(`submit`, (evt) => {
+        this._code = code.value;
+        this._codeCheck(evt, this._code);
+        code.value = ``;
+      });
+    }
+
+    _renderBasketGuitars() {
+      this.view.renderBasketCards(Object.values(this.store.getGuitars()), this._deleteGuitar, this._addGuitar);
+    }
+
+    _deleteGuitar(evt, id, all) {
+      this.store.deleteGuitar(id, all);
+      this._renderBasketGuitars();
+      this.api.deleteGuitar(id, all);
+      this._getAllPrice();
+      this._codeCheck(evt, this._code);
+      this._getNumberGuitars();
+    }
+
+    _addGuitar(evt, guitar) {
+      this.store.addGuitar(guitar);
+      this._renderBasketGuitars();
+      this.api.addCardInBasket(guitar);
+      this._getAllPrice();
+      this._codeCheck(evt, this._code);
+      this._getNumberGuitars();
+    }
+
+    _getAllPrice() {
+      const allPrice = document.querySelector(`.basket__all-price`);
+      const priceItems = document.querySelectorAll(`.guitar__full-price-content`);
+      allPrice.textContent = ``;
+      priceItems.forEach((item) => {
+        allPrice.textContent = Number(allPrice.textContent) + Number(item.textContent);
+      });
+    }
+
+    _codeCheck(evt, code) {
+      evt.preventDefault();
+      const allPrice = document.querySelector(`.basket__all-price`);
+      const button = document.querySelector(`.basket__code-submit`);
+      if (code === `GITARAHIT`) {
+        allPrice.textContent = (Number(allPrice.textContent) * 90) / 100;
+        button.disabled = true;
+      } else if (code === `SUPERGITARA`) {
+        if (Number(allPrice.textContent) >= 700) {
+          allPrice.textContent = Number(allPrice.textContent) - 700;
+        } else {
+          allPrice.textContent = 0;
+        }
+        button.disabled = true;
+      } else if (code === `GITARA2020`) {
+        let number = (Number(allPrice.textContent) * 30) / 100;
+        if (number < 3500) {
+          allPrice.textContent = Number(allPrice.textContent) - number;
+          button.disabled = true;
+        } else {
+          allPrice.textContent = Number(allPrice.textContent) - 3500;
+          button.disabled = true;
+        }
+      } else if (code === ``) {
+        alert(`Введите промокод`);
+      } else if (code === null) {
+        return;
+      } else {
+        alert(`Промокод недействителен`);
+      }
+    }
+  }
+
+  if (localStorage.getItem(`guitarsBasket`) === null) {
+    localStorage.setItem(`guitarsBasket`, JSON.stringify({data: {}}));
+  }
+
+  const api = new API(`/js/data.json`);
+
+  if (window.location.pathname === `/basket.html`) {
+    const basketStore = new StoreBasket(api.getCardsBasket());
+    const basketView = new ViewBasket();
+    const basketPresenter = new PresenterBasket(basketStore, basketView, api);
+    basketPresenter.init();
+  } else {
+    api.getCards().then((cards) => {
+      const myStore = new Store(cards);
+      const myView = new View();
+      const myPresenter = new Presenter(myStore, myView, api);
+      myPresenter.init();
+    });
+  }
 
 }());
 

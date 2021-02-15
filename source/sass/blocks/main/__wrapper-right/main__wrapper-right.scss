@@ -1,0 +1,9 @@
+.main__wrapper-right {
+  display: flex;
+  flex-direction: column;
+
+  width: calc(100% - 240px);
+
+  margin: 0;
+  padding: 0;
+}

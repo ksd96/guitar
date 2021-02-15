@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Стартовый шаблон</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/DroidSans.woff" as="font">
+  <link rel="preload" href="fonts/DroidSans-Bold.woff" as="font">
+</head>
+<body class="page">
+  <div class="page__sprite">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+  <header class="header">
+    <div class="header__wrapper-top">
+      <div class="header__wrapper">
+        <a class="header__logo-link">
+          <svg class="header__logo" width="67" height="70"><use xlink:href="#logo"></use></svg>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="./index.html" class="header__nav-link">Каталог</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Где купить?</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">О компании</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Cервис-центры</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="header__buttons-list">
+          <li class="header__buttons-item">
+            <button class="header__button" type="button">
+              <svg class="header__button-icon" width="14" height="17"><use xlink:href="#icon-map"></use></svg>
+            </button>
+          </li>
+          <li class="header__buttons-item">
+            <button class="header__button" type="button">
+              <svg class="header__button-icon" width="14" height="14"><use xlink:href="#icon-search"></use></svg>
+            </button>
+          </li>
+          <li class="header__buttons-item">
+            <a href="#" class="header__button header__button_basket">
+              <span class="header__button-indicator">1</span>
+              <svg class="header__button-icon" width="13" height="13"><use xlink:href="#icon-basket"></use></svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="header__image-wrapper">
+      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image">
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__title-wrapper">
+      <h1 class="main__title">Каталог гитар</h1>
+      <ul class="main__links-list">
+        <li class="main__links-item">
+          <a href="#" class="main__link">Главная</a>
+        </li>
+        <li class="main__links-item">
+          <a href="./index.html" class="main__link">Каталог</a>
+        </li>
+        <li class="main__links-item">
+          <a href="#" class="main__link">Оформляем</a>
+        </li>
+      </ul>
+    </div>
+    <div class="main__wrapper">
+      <section class="basket">
+        <ul class="basket__list">
+        </ul>
+        <div class="basket__ordering">
+          <div class="basket__promo-wrapper">
+            <h2 class="basket__title">Промокод на скидку</h2>
+            <p class="basket__subtitle">Введите свой промокод, если он у вас есть.</p>
+            <form class="basket__code-wrapper" name="form-code">
+              <input type="text" class="basket__code" name="code">
+              <button class="basket__code-submit" type="submit">Применить купон</button>
+            </form>
+          </div>
+          <div class="basket__checkout-wrapper">
+            <p class="basket__price">Всего: <span class="basket__all-price"></span> ₽</p>
+            <a href="#" class="basket__checkout">Оформить заказ</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__wrapper-bottom">
+      <div class="footer__columns">
+        <div class="footer__wrapper-socials">
+          <svg class="footer__logo" width="67" height="70"><use xlink:href="#logo-footer"></use></svg>
+          <ul class="footer__socials-list">
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link">
+                <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-fb"></use></svg>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link">
+                <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-inst"></use></svg>
+              </a>
+            </li>
+            <li class="footer__social-item">
+              <a href="#" class="footer__social-link">
+                <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-tw"></use></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__wrapper-links">
+          <div class="footer__column">
+            <h2 class="footer__heading">О нас</h2>
+            <p class="footer__about-text">Магазин гитар, музыкальных инструментов и гитарная мастерская в Санкт-Петербурге.</p>
+            <p class="footer__about-text">Все инструменты проверены, отстроены и доведены до идеала!</p>
+          </div>
+          <div class="footer__column">
+            <h2 class="footer__heading">Каталог</h2>
+            <ul class="footer__column-list">
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Акустические гитары</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Классические гитары</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Электрогитары</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Бас-гитары</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Укулеле</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h2 class="footer__heading">Информация</h2>
+            <ul class="footer__column-list">
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Где купить?</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Блог</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Вопрос - ответ</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Возврат</a>
+              </li>
+              <li class="footer__column-item">
+                <a href="#" class="footer__column-link">Сервис-центры</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__wrapper-contacts">
+          <div class="footer__column">
+            <h2 class="footer__heading">Контакты</h2>
+            <p class="footer__contacts-text">
+              <span class="footer__span">г. Санкт-Петербург,</span>
+              <span class="footer__span">м. Невский проспект,</span>
+              <span class="footer__span">ул. Казанская 6. </span>
+              <span class="footer__span footer__span_type_phone">8-812-500-50-50</span>
+            </p>
+            <p class="footer__contacts-text">
+              <span class="footer__span">Режим работы:</span>
+              <span class="footer__span footer__span_type_time">с 11:00 до 20:00,</span>
+              <span class="footer__span">без выходных.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="overlay">
+  </div>
+  <template id="cardBasketTemplate">
+    <li class="basket__item guitar">
+      <button class="guitar__delete" type="button">
+        <svg class="guitar__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <img src="#" alt="фото гитары" class="guitar__img">
+      <div class="guitar__wrapper">
+        <h3 class="guitar__title">ГИТАРА <span class="guitar__name"></span></h3>
+        <p class="guitar__article">Артикул: <span class="guitar__article-content"></span></p>
+        <p class="guitar__type"><span class="guitar__type-content"></span>, <span class="guitar__strings"></span></p>
+      </div>
+      <p class="guitar__price"><span class="guitar__price-content"></span> ₽</p>
+      <div class="guitar__buttons">
+        <button class="guitar__button guitar__button_type_less" type="button">-</button>
+        <p class="guitar__quantity"></p>
+        <button class="guitar__button guitar__button_type_more" type="button">+</button>
+      </div>
+      <p class="guitar__full-price"><span class="guitar__full-price-content"></span> ₽</p>
+    </li>
+  </template>
+  <template id="popupBasketTemplate">
+    <div class="popup popup_basket">
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Удалить этот товар?</h2>
+      <div class="popup__wrapper">
+        <img src="#" alt="Фото гитары" class="popup__img">
+        <div class="popup__info">
+          <h3 class="popup__guitar-title">ГИТАРА <span class="popup__guitar-name"></span></h3>
+          <p class="popup__article">Артикул: <span class="popup__guitar-article"></span></p>
+          <p class="popup__type"><span class="popup__guitar-type"></span>, <span class="popup__guitar-strings"></span></p>
+          <p class="popup__price">Цена: <span class="popup__guitar-price"></span>  ₽</p>
+        </div>
+        <div class="popup__wrapper-buttons">
+          <button class="popup__button popup__button_type_delete" type="button">Удалить товар</button>
+          <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+.guitar__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0 10px;
+
+  min-height: 30px;
+
+  border-left: 1px solid #9f9e9e;
+  border-right: 1px solid #9f9e9e;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+  color: #9F9E9E;
+}
