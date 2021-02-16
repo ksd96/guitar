@@ -22,4 +22,13 @@
   color: #000000;
   text-align: center;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    border: 2px solid #585757;
+  }
+
+  &:active {
+    border: 2px solid #c1c1c1;
+  }
 }

@@ -31,9 +31,9 @@ export default class Store {
   getSortPrice() {
     const guitars = this.getFilteredGuitars();
     if (this.sort.price === `min`) {
-       guitars.sort((a, b) => {
-         return a.price - b.price;
-       });
+      guitars.sort((a, b) => {
+        return a.price - b.price;
+      });
     } else if (this.sort.price === `max`) {
       guitars.sort((a, b) => {
         return b.price - a.price;
@@ -46,9 +46,9 @@ export default class Store {
   getSortPopularity() {
     const guitars = this.getFilteredGuitars();
     if (this.sort.popularity === `min`) {
-       guitars.sort((a, b) => {
-         return a.popularity - b.popularity;
-       });
+      guitars.sort((a, b) => {
+        return a.popularity - b.popularity;
+      });
     } else if (this.sort.popularity === `max`) {
       guitars.sort((a, b) => {
         return b.popularity - a.popularity;
@@ -95,7 +95,7 @@ export default class Store {
 
   // отдает минимальную стоимость гитар
   getMinGuitarsPrice() {
-		const prices = Object.values(this.guitars).map((guitar) => guitar.price);
+    const prices = Object.values(this.guitars).map((guitar) => guitar.price);
     return Math.min.apply(null, prices);
   }
 

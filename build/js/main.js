@@ -99,9 +99,9 @@
     getSortPrice() {
       const guitars = this.getFilteredGuitars();
       if (this.sort.price === `min`) {
-         guitars.sort((a, b) => {
-           return a.price - b.price;
-         });
+        guitars.sort((a, b) => {
+          return a.price - b.price;
+        });
       } else if (this.sort.price === `max`) {
         guitars.sort((a, b) => {
           return b.price - a.price;
@@ -114,9 +114,9 @@
     getSortPopularity() {
       const guitars = this.getFilteredGuitars();
       if (this.sort.popularity === `min`) {
-         guitars.sort((a, b) => {
-           return a.popularity - b.popularity;
-         });
+        guitars.sort((a, b) => {
+          return a.popularity - b.popularity;
+        });
       } else if (this.sort.popularity === `max`) {
         guitars.sort((a, b) => {
           return b.popularity - a.popularity;
@@ -163,7 +163,7 @@
 
     // отдает минимальную стоимость гитар
     getMinGuitarsPrice() {
-  		const prices = Object.values(this.guitars).map((guitar) => guitar.price);
+      const prices = Object.values(this.guitars).map((guitar) => guitar.price);
       return Math.min.apply(null, prices);
     }
 
@@ -226,12 +226,12 @@
   }
 
   class View {
-     // получение карточки гитары
+    // получение карточки гитары
     _getGuitarCard(guitar, clickHandler) {
       const template = document.querySelector(`#cardTemplate`);
       const clone = template.content.cloneNode(true);
       clone.querySelector(`.card__title`).textContent = guitar.name;
-      clone.querySelector(`.card__price`).textContent = guitar.price;
+      clone.querySelector(`.card__price-content`).textContent = guitar.price;
       clone.querySelector(`.card__rating`).textContent = guitar.popularity;
       clone.querySelector(`.card__image`).src = guitar.img;
       clone.querySelector(`.card__button_type_buy`).addEventListener(`click`, () => {
@@ -274,6 +274,24 @@
     _getPopup(guitar, clickHandler) {
       const template = document.querySelector(`#popupTemplate`);
       const clone = template.content.cloneNode(true);
+      const overlay = document.querySelector(`.overlay`);
+      const page = document.querySelector(`.page`);
+      if (overlay) {
+        overlay.addEventListener(`click`, (event) => {
+          if (event.target === event.currentTarget) {
+            overlay.classList.remove(`overlay_opened`);
+            page.classList.remove(`page_no-scrole`);
+          }
+        });
+      }
+      window.addEventListener(`keydown`, (event) => {
+        if (event.key === `Escape`) {
+          if (overlay.classList.contains(`overlay_opened`)) {
+            overlay.classList.remove(`overlay_opened`);
+            page.classList.remove(`page_no-scrole`);
+          }
+        }
+      });
       clone.querySelector(`.popup__guitar-name`).textContent = guitar.name;
       clone.querySelector(`.popup__guitar-price`).textContent = guitar.price;
       clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
@@ -281,8 +299,6 @@
       clone.querySelector(`.popup__guitar-strings`).textContent = guitar.strings;
       clone.querySelector(`.popup__img`).src = guitar.img;
       clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
-        const overlay = document.querySelector(`.overlay`);
-        const page = document.querySelector(`.page`);
         overlay.classList.remove(`overlay_opened`);
         page.classList.remove(`page_no-scrole`);
       });
@@ -503,11 +519,11 @@
         this._changeButtonsStates(this.buttonSortMax, `sort__button`);
         this._sortCardsMinMax(`max`);
       });
-      this.priceMin.addEventListener(`blur`, (evt) => {
+      this.priceMin.addEventListener(`blur`, () => {
         this._getFilteredGuitars();
         this._clickFilterItem();
       });
-      this.priceMax.addEventListener(`blur`, (evt) => {
+      this.priceMax.addEventListener(`blur`, () => {
         this._getFilteredGuitars();
         this._clickFilterItem();
       });
@@ -702,6 +718,48 @@
   }
 
   class ViewBasket {
+    _getPopupCode(text) {
+      const template = document.querySelector(`#popupCodeTemplate`);
+      const clone = template.content.cloneNode(true);
+      const page = document.querySelector(`.page`);
+      const overlay = document.querySelector(`.overlay`);
+      if (overlay) {
+        overlay.addEventListener(`click`, (event) => {
+          if (event.target === event.currentTarget) {
+            overlay.classList.remove(`overlay_opened`);
+            page.classList.remove(`page_no-scrole`);
+          }
+        });
+      }
+      window.addEventListener(`keydown`, (event) => {
+        if (event.key === `Escape`) {
+          if (overlay.classList.contains(`overlay_opened`)) {
+            overlay.classList.remove(`overlay_opened`);
+            page.classList.remove(`page_no-scrole`);
+          }
+        }
+      });
+      clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
+        overlay.classList.remove(`overlay_opened`);
+        page.classList.remove(`page_no-scrole`);
+      });
+      clone.querySelector(`.popup__title`).textContent = text;
+      return clone;
+    }
+
+    renderPopupCode(text) {
+      const container = document.querySelector(`.overlay`);
+      const page = document.querySelector(`.page`);
+      container.classList.add(`overlay_opened`);
+      page.classList.add(`page_no-scrole`);
+
+      while (container.firstChild) {
+        container.removeChild(container.lastChild);
+      }
+
+      const popup = this._getPopupCode(text);
+      container.appendChild(popup);
+    }
     // получение элемента корзины
     _getBasketCard(guitar, clickHandler1, clickHandler2) {
       const template = document.querySelector(`#cardBasketTemplate`);
@@ -714,7 +772,7 @@
       clone.querySelector(`.guitar__strings`).textContent = guitar.strings;
       clone.querySelector(`.guitar__quantity`).textContent = guitar.count;
       clone.querySelector(`.guitar__full-price-content`).textContent = guitar.price * guitar.count;
-      clone.querySelector(`.guitar__delete`).addEventListener(`click`, (evt) => {
+      clone.querySelector(`.guitar__delete`).addEventListener(`click`, () => {
         this.renderPopup(guitar, clickHandler1);
       });
       clone.querySelector(`.guitar__button_type_more`).addEventListener(`click`, (evt) => {
@@ -736,6 +794,22 @@
       const clone = template.content.cloneNode(true);
       const page = document.querySelector(`.page`);
       const overlay = document.querySelector(`.overlay`);
+      if (overlay) {
+        overlay.addEventListener(`click`, (event) => {
+          if (event.target === event.currentTarget) {
+            overlay.classList.remove(`overlay_opened`);
+            page.classList.remove(`page_no-scrole`);
+          }
+        });
+      }
+      window.addEventListener(`keydown`, (event) => {
+        if (event.key === `Escape`) {
+          if (overlay.classList.contains(`overlay_opened`)) {
+            overlay.classList.remove(`overlay_opened`);
+            page.classList.remove(`page_no-scrole`);
+          }
+        }
+      });
       clone.querySelector(`.popup__guitar-name`).textContent = guitar.name;
       clone.querySelector(`.popup__guitar-price`).textContent = guitar.price;
       clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
@@ -881,11 +955,11 @@
           button.disabled = true;
         }
       } else if (code === ``) {
-        alert(`Введите промокод`);
+        this.view.renderPopupCode(`Введите промокод`);
       } else if (code === null) {
         return;
       } else {
-        alert(`Промокод недействителен`);
+        this.view.renderPopupCode(`Промокод недействителен`);
       }
     }
   }

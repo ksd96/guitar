@@ -2,7 +2,7 @@
   width: 24px;
   height: 24px;
 
-  border: 0.7px solid #9F9E9E;
+  border: 0.7px solid #9f9e9e;
   box-sizing: border-box;
   border-radius: 2px;
 
@@ -16,4 +16,13 @@
   color: #000000;
 
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 0.7px solid #585757;
+  }
+
+  &:active {
+    border: 0.7px solid #c1c1c1;
+  }
 }

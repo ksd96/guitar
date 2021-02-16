@@ -111,11 +111,11 @@ export default class Presenter {
       this._changeButtonsStates(this.buttonSortMax, `sort__button`);
       this._sortCardsMinMax(`max`);
     });
-    this.priceMin.addEventListener(`blur`, (evt) => {
+    this.priceMin.addEventListener(`blur`, () => {
       this._getFilteredGuitars();
       this._clickFilterItem();
     });
-    this.priceMax.addEventListener(`blur`, (evt) => {
+    this.priceMax.addEventListener(`blur`, () => {
       this._getFilteredGuitars();
       this._clickFilterItem();
     });

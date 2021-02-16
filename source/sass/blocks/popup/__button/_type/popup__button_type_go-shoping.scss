@@ -7,4 +7,17 @@
   border: 1px solid #585757;
 
   background: inherit;
+
+  &:hover,
+  &:focus {
+    border: 1px solid rgba(88, 87, 87, 0.7);
+    color: rgba(88, 87, 87, 0.7);
+    background: inherit;
+  }
+
+  &:active {
+    border: 1px solid rgba(108, 108, 108, 0.5);
+    color: rgba(88, 87, 87, 0.5);
+    background: inherit;
+  }
 }

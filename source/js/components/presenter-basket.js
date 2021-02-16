@@ -66,7 +66,7 @@ export default class PresenterBasket {
     allPrice.textContent = ``;
     priceItems.forEach((item) => {
       allPrice.textContent = Number(allPrice.textContent) + Number(item.textContent);
-    })
+    });
   }
 
   _codeCheck(evt, code) {
@@ -93,11 +93,11 @@ export default class PresenterBasket {
         button.disabled = true;
       }
     } else if (code === ``) {
-      alert(`Введите промокод`);
+      this.view.renderPopupCode(`Введите промокод`);
     } else if (code === null) {
       return;
     } else {
-      alert(`Промокод недействителен`);
+      this.view.renderPopupCode(`Промокод недействителен`);
     }
   }
 }

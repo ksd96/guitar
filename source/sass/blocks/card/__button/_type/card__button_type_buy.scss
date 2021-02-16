@@ -1,3 +1,29 @@
 .card__button_type_buy {
-  background: #E27F00;
+  display: flex;
+  align-items: center;
+  background: #e27f00;
+
+  &::before {
+    content: "";
+
+    width: 10.5px;
+    height: 10.5px;
+
+    margin: 0;
+    padding: 0;
+    margin-right: 2.5px;
+
+    background-image: url("../img/icon-grocery-cart.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover,
+  &:focus {
+    background: #ffa839;
+  }
+
+  &:active {
+    background: #da8b26;
+  }
 }

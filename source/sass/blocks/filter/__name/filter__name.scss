@@ -1,4 +1,9 @@
 .filter__name {
+  display: flex;
+  align-items: center;
+
+  word-wrap: break-word;
+
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

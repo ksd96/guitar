@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
+  <title>Guitar Shop: корзина</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/DroidSans.woff" as="font">
   <link rel="preload" href="fonts/DroidSans-Bold.woff" as="font">
@@ -37,14 +37,14 @@
         </nav>
         <ul class="header__buttons-list">
           <li class="header__buttons-item">
-            <button class="header__button" type="button">
+            <a href="#" class="header__button">
               <svg class="header__button-icon" width="14" height="17"><use xlink:href="#icon-map"></use></svg>
-            </button>
+            </a>
           </li>
           <li class="header__buttons-item">
-            <button class="header__button" type="button">
+            <a href="#" class="header__button">
               <svg class="header__button-icon" width="14" height="14"><use xlink:href="#icon-search"></use></svg>
-            </button>
+            </a>
           </li>
           <li class="header__buttons-item">
             <a href="#" class="header__button header__button_basket">
@@ -56,12 +56,12 @@
       </div>
     </div>
     <div class="header__image-wrapper">
-      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image">
+      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image" width="828" height="296">
     </div>
   </header>
-  <main class="main">
-    <div class="main__title-wrapper">
-      <h1 class="main__title">Каталог гитар</h1>
+  <main class="main main_basket">
+    <div class="main__title-wrapper main__title-wrapper_basket">
+      <h1 class="main__title">Корзина</h1>
       <ul class="main__links-list">
         <li class="main__links-item">
           <a href="#" class="main__link">Главная</a>
@@ -102,17 +102,17 @@
           <svg class="footer__logo" width="67" height="70"><use xlink:href="#logo-footer"></use></svg>
           <ul class="footer__socials-list">
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link">
+              <a href="#" class="footer__social-link" title="ссылка на страницу в фейсбуке">
                 <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-fb"></use></svg>
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link">
+              <a href="#" class="footer__social-link" title="ссылка на страницу в инстаграмме">
                 <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-inst"></use></svg>
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link">
+              <a href="#" class="footer__social-link" title="ссылка на страницу в твитере">
                 <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-tw"></use></svg>
               </a>
             </li>
@@ -191,7 +191,7 @@
       <button class="guitar__delete" type="button">
         <svg class="guitar__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
       </button>
-      <img src="#" alt="фото гитары" class="guitar__img">
+      <img src="#" alt="фото гитары" class="guitar__img" width="48" height="124">
       <div class="guitar__wrapper">
         <h3 class="guitar__title">ГИТАРА <span class="guitar__name"></span></h3>
         <p class="guitar__article">Артикул: <span class="guitar__article-content"></span></p>
@@ -213,7 +213,7 @@
       </button>
       <h2 class="popup__title">Удалить этот товар?</h2>
       <div class="popup__wrapper">
-        <img src="#" alt="Фото гитары" class="popup__img">
+        <img src="#" alt="Фото гитары" class="popup__img" width="56" height="128">
         <div class="popup__info">
           <h3 class="popup__guitar-title">ГИТАРА <span class="popup__guitar-name"></span></h3>
           <p class="popup__article">Артикул: <span class="popup__guitar-article"></span></p>
@@ -225,6 +225,14 @@
           <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
         </div>
       </div>
+    </div>
+  </template>
+  <template id="popupCodeTemplate">
+    <div class="popup popup_basket">
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Код не действителен</h2>
     </div>
   </template>
   <script src="./js/main.js"></script>

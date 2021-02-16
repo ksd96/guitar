@@ -9,7 +9,7 @@
   margin: 0;
   padding: 0;
 
-  background: #E27F00;
+  background: #e27f00;
 
   border-radius: 2px;
 
@@ -20,4 +20,15 @@
   letter-spacing: 0.05em;
   color: #ffffff;
   text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: #ffe839;
+  }
+
+  &:active {
+    background: #da8b26;
+  }
 }

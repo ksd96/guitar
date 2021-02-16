@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Сайт по продаже гитар">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
+  <title>Guitar Shop</title>
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="preload" href="fonts/DroidSans.woff" as="font">
   <link rel="preload" href="fonts/DroidSans-Bold.woff" as="font">
@@ -37,14 +38,14 @@
         </nav>
         <ul class="header__buttons-list">
           <li class="header__buttons-item">
-            <button class="header__button" type="button">
+            <a href="#" class="header__button">
               <svg class="header__button-icon" width="14" height="17"><use xlink:href="#icon-map"></use></svg>
-            </button>
+            </a>
           </li>
           <li class="header__buttons-item">
-            <button class="header__button" type="button">
+            <a href="#" class="header__button">
               <svg class="header__button-icon" width="14" height="14"><use xlink:href="#icon-search"></use></svg>
-            </button>
+            </a>
           </li>
           <li class="header__buttons-item">
             <a href="./basket.html" class="header__button header__button_basket">
@@ -56,7 +57,7 @@
       </div>
     </div>
     <div class="header__image-wrapper">
-      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image">
+      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image" width="828" height="296">
     </div>
   </header>
   <main class="main">
@@ -78,9 +79,11 @@
           <div class="filter__price">
             <h3 class="filter__title-item">Цена, ₽</h3>
             <div class="filter__price-wrapper">
-              <input type="text" class="filter__price-input filter__price-input_type_min">
+              <label class="visually-hidden" for="price-min">Минимальная цена</label>
+              <input id="price-min" type="text" class="filter__price-input filter__price-input_type_min">
               <span class="filter__price-span"></span>
-              <input type="text" class="filter__price-input filter__price-input_type_max">
+              <label class="visually-hidden" for="price-max">Максимальная цена</label>
+              <input id="price-max" type="text" class="filter__price-input filter__price-input_type_max">
             </div>
           </div>
           <div class="filter__type">
@@ -105,21 +108,20 @@
               </li>
             </ul>
           </div>
-          <!-- <button class="filter__submit" type="submit">показать</button> -->
         </form>
       </section>
       <div class="main__wrapper-right">
         <section class="sort">
           <h2 class="sort__title">Сортировать:</h2>
           <div class="sort__wrapper-type">
-            <button class="sort__button-type sort__button-type_type_price" type="button">по цене</button>
-            <button class="sort__button-type sort__button-type_type_popularity" type="button">по популярности</button>
+            <button class="sort__button-type sort__button-type_type_price" type="button" aria-label="Сортировка по цене">по цене</button>
+            <button class="sort__button-type sort__button-type_type_popularity" type="button" aria-label="Сортировка по популярности">по популярности</button>
           </div>
           <div class="sort__wrapper-buttons">
-            <button class="sort__button sort__button_type_min" type="button">
+            <button class="sort__button sort__button_type_min" type="button" aria-label="Сортировка от меньшего к большему">
               <svg class="sort__button-icon" width="13" height="13"><use xlink:href="#icon-min"></use></svg>
             </button>
-            <button class="sort__button sort__button_type_max" type="button">
+            <button class="sort__button sort__button_type_max" type="button" aria-label="Сортировка от большего к меньшему">
               <svg class="sort__button-icon" width="13" height="13"><use xlink:href="#icon-max"></use></svg>
             </button>
           </div>
@@ -141,17 +143,17 @@
           <svg class="footer__logo" width="67" height="70"><use xlink:href="#logo-footer"></use></svg>
           <ul class="footer__socials-list">
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link">
+              <a href="#" class="footer__social-link" title="ссылка на страницу в фейсбуке">
                 <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-fb"></use></svg>
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link">
+              <a href="#" class="footer__social-link" title="ссылка на страницу в инстаграмме">
                 <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-inst"></use></svg>
               </a>
             </li>
             <li class="footer__social-item">
-              <a href="#" class="footer__social-link">
+              <a href="#" class="footer__social-link" title="ссылка на страницу в твитере">
                 <svg class="footer__social-icon" width="24" height="24"><use xlink:href="#icon-tw"></use></svg>
               </a>
             </li>
@@ -230,7 +232,7 @@
           </button>
           <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
           <div class="popup__wrapper popup__wrapper_added">
-            <a href="#" class="popup__button popup__button_type_go-basket" type="button">Перейти в корзину</a>
+            <a href="#" class="popup__button popup__button_type_go-basket">Перейти в корзину</a>
             <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
           </div>
         </div>
@@ -304,7 +306,7 @@
       </button>
       <h2 class="popup__title">Добавить товар в корзину</h2>
       <div class="popup__wrapper">
-        <img src="#" alt="Фото гитары" class="popup__img">
+        <img src="#" alt="Фото гитары" class="popup__img" width="56" height="128">
         <div class="popup__info">
           <h3 class="popup__guitar-title">ГИТАРА <span class="popup__guitar-name"></span></h3>
           <p class="popup__article">Артикул: <span class="popup__guitar-article"></span></p>
@@ -329,7 +331,7 @@
   </template>
   <template id="cardTemplate">
     <div class="card">
-      <img class="card__image" src="#" alt="гитара">
+      <img class="card__image" src="#" alt="гитара" width="68" height="190">
       <div class="card__rating-wrapper">
         <svg class="card__star" width="10" height="10"><use xlink:href="#icon-star"></use></svg>
         <svg class="card__star" width="10" height="10"><use xlink:href="#icon-star"></use></svg>
@@ -340,7 +342,7 @@
       </div>
       <div class="card__title-wrapper">
         <h3 class="card__title"></h3>
-        <p class="card__price"></p>
+        <p class="card__price"><span class="card__price-content"></span> ₽</p>
       </div>
       <div class="card__buttons">
         <button class="card__button card__button_type_more" type="button">Подробнее</button>
@@ -351,8 +353,8 @@
   <template id="filterItemTemplate">
     <li class="filter__item">
       <label class="filter__label">
-        <input type="checkbox" class="filter__input" name="" value="">
-        <p class="filter__name">Акустические гитры</p>
+        <input type="checkbox" class="filter__input visually-hidden" name="" value="">
+        <span class="filter__name">Акустические гитры</span>
       </label>
     </li>
   </template>
@@ -366,7 +368,7 @@
       <button class="guitar__delete" type="button">
         <svg class="guitar__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
       </button>
-      <img src="#" alt="фото гитары" class="guitar__img">
+      <img src="#" alt="фото гитары" class="guitar__img" width="48" height="124">
       <div class="guitar__wrapper">
         <h3 class="guitar__title">ГИТАРА <span class="guitar__name"></span></h3>
         <p class="guitar__article">Артикул: <span class="guitar__article-content"></span></p>

@@ -3,11 +3,22 @@
   padding: 0;
 
   width: 28px;
-  height: 30px;
+  height: 28px;
 
   background: inherit;
 
   border: none;
 
   color: #9f9e9e;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: #474747;
+  }
+
+  &:active {
+    color: rgba(71, 71, 71, 0.5);
+  }
 }

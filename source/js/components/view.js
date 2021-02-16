@@ -1,10 +1,10 @@
 export default class View {
-   // получение карточки гитары
+  // получение карточки гитары
   _getGuitarCard(guitar, clickHandler) {
     const template = document.querySelector(`#cardTemplate`);
     const clone = template.content.cloneNode(true);
     clone.querySelector(`.card__title`).textContent = guitar.name;
-    clone.querySelector(`.card__price`).textContent = guitar.price;
+    clone.querySelector(`.card__price-content`).textContent = guitar.price;
     clone.querySelector(`.card__rating`).textContent = guitar.popularity;
     clone.querySelector(`.card__image`).src = guitar.img;
     clone.querySelector(`.card__button_type_buy`).addEventListener(`click`, () => {
@@ -47,6 +47,24 @@ export default class View {
   _getPopup(guitar, clickHandler) {
     const template = document.querySelector(`#popupTemplate`);
     const clone = template.content.cloneNode(true);
+    const overlay = document.querySelector(`.overlay`);
+    const page = document.querySelector(`.page`);
+    if (overlay) {
+      overlay.addEventListener(`click`, (event) => {
+        if (event.target === event.currentTarget) {
+          overlay.classList.remove(`overlay_opened`);
+          page.classList.remove(`page_no-scrole`);
+        }
+      });
+    }
+    window.addEventListener(`keydown`, (event) => {
+      if (event.key === `Escape`) {
+        if (overlay.classList.contains(`overlay_opened`)) {
+          overlay.classList.remove(`overlay_opened`);
+          page.classList.remove(`page_no-scrole`);
+        }
+      }
+    });
     clone.querySelector(`.popup__guitar-name`).textContent = guitar.name;
     clone.querySelector(`.popup__guitar-price`).textContent = guitar.price;
     clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
@@ -54,8 +72,6 @@ export default class View {
     clone.querySelector(`.popup__guitar-strings`).textContent = guitar.strings;
     clone.querySelector(`.popup__img`).src = guitar.img;
     clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
-      const overlay = document.querySelector(`.overlay`);
-      const page = document.querySelector(`.page`);
       overlay.classList.remove(`overlay_opened`);
       page.classList.remove(`page_no-scrole`);
     });

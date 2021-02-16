@@ -1,3 +1,12 @@
 .card__button_type_more {
-  background: #C1C1C1;
+  background: #c1c1c1;
+
+  &:hover,
+  &:focus {
+    background: #585757;
+  }
+
+  &:active {
+    background: #9f9e9e;
+  }
 }

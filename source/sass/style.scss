@@ -1,10 +1,9 @@
 @import "./normalize.scss";
 @import "../fonts/fonts.scss";
-
+@import "./blocks/visually-hidden/visually-hidden.scss";
 @import "./blocks/page/page.scss";
 @import "./blocks/page/__sprite/page__sprite.scss";
 @import "./blocks/page/_no-scrole/page_no-scrole.scss";
-
 @import "./blocks/header/header.scss";
 @import "./blocks/header/__logo-link/header__logo-link.scss";
 @import "./blocks/header/__wrapper-top/header__wrapper-top.scss";
@@ -21,7 +20,6 @@
 @import "./blocks/header/__guitar-image/header__guitar-image.scss";
 @import "./blocks/header/__button/_basket/header__button_basket.scss";
 @import "./blocks/header/__button-indicator/header__button-indicator.scss";
-
 @import "./blocks/footer/footer.scss";
 @import "./blocks/footer/__wrapper-bottom/footer__wrapper-bottom.scss";
 @import "./blocks/footer/__columns/footer__columns.scss";
@@ -39,18 +37,19 @@
 @import "./blocks/footer/__contacts-text/footer__contacts-text.scss";
 @import "./blocks/footer/__span/_type/footer__span_type_phone.scss";
 @import "./blocks/footer/__span/_type/footer__span_type_time.scss";
-
 @import "./blocks/main/main.scss";
+@import "./blocks/main/_basket/main_basket.scss";
 @import "./blocks/main/__wrapper/main__wrapper.scss";
 @import "./blocks/main/__wrapper-right/main__wrapper-right.scss";
 @import "./blocks/main/__title-wrapper/main__title-wrapper.scss";
+@import "./blocks/main/__title-wrapper/_basket/main__title-wrapper_basket.scss";
 @import "./blocks/main/__title/main__title.scss";
 @import "./blocks/main/__links-list/main__links-list.scss";
 @import "./blocks/main/__links-item/main__links-item.scss";
 @import "./blocks/main/__link/main__link.scss";
-
 @import "./blocks/filter/filter.scss";
 @import "./blocks/filter/__title/filter__title.scss";
+@import "./blocks/filter/__title-item/filter__title-item.scss";
 @import "./blocks/filter/__price/filter__price.scss";
 @import "./blocks/filter/__price-wrapper/filter__price-wrapper.scss";
 @import "./blocks/filter/__price-input/filter__price-input.scss";
@@ -62,7 +61,6 @@
 @import "./blocks/filter/__input/filter__input.scss";
 @import "./blocks/filter/__name/filter__name.scss";
 @import "./blocks/filter/__submit/filter__submit.scss";
-
 @import "./blocks/card/card.scss";
 @import "./blocks/card/__image/card__image.scss";
 @import "./blocks/card/__rating-wrapper/card__rating-wrapper.scss";
@@ -75,7 +73,6 @@
 @import "./blocks/card/__button/_type/card__button_type_buy.scss";
 @import "./blocks/card/__button/_type/card__button_type_more.scss";
 @import "./blocks/card/__star/card__star.scss";
-
 @import "./blocks/sort/sort.scss";
 @import "./blocks/sort/__title/sort__title.scss";
 @import "./blocks/sort/__wrapper-type/sort__wrapper-type.scss";
@@ -87,17 +84,14 @@
 @import "./blocks/sort/__button/_active/sort__button_active.scss";
 @import "./blocks/cards/cards.scss";
 @import "./blocks/cards/__list/cards__list.scss";
-
 @import "./blocks/pages/pages.scss";
 @import "./blocks/pages/__list/pages__list.scss";
 @import "./blocks/pages/__item/pages__item.scss";
 @import "./blocks/pages/__button/pages__button.scss";
 @import "./blocks/pages/__button/_active/pages__button_actiev.scss";
 @import "./blocks/pages/__button-next/pages__button-next.scss";
-
 @import "./blocks/overlay/overlay.scss";
 @import "./blocks/overlay/_opened/overlay_opened.scss";
-
 @import "./blocks/popup/popup.scss";
 @import "./blocks/popup/__close/popup__close.scss";
 @import "./blocks/popup/__title/popup__title.scss";
@@ -114,7 +108,6 @@
 @import "./blocks/popup/__button/_type/popup__button_type_go-basket.scss";
 @import "./blocks/popup/__button/_type/popup__button_type_go-shoping.scss";
 @import "./blocks/popup/__button/_type/popup__button_type_delete.scss";
-
 @import "./blocks/basket/basket.scss";
 @import "./blocks/basket/__list/basket__list.scss";
 @import "./blocks/basket/__ordering/basket__ordering.scss";
@@ -127,7 +120,6 @@
 @import "./blocks/basket/__checkout-wrapper/basket__checkout-wrapper.scss";
 @import "./blocks/basket/__price/basket__price.scss";
 @import "./blocks/basket/__checkout/basket__checkout.scss";
-
 @import "./blocks/guitar/guitar.scss";
 @import "./blocks/guitar/__delete/guitar__delete.scss";
 @import "./blocks/guitar/__img/guitar__img.scss";

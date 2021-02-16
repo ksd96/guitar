@@ -7,3 +7,51 @@
 
   cursor: pointer;
 }
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.filter__label > span::before {
+  content: "";
+
+  border: 0.7px solid #9f9e9e;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  width: 24px;
+  height: 24px;
+
+  margin: 0;
+  padding: 0;
+  margin-right: 16px;
+}
+
+/* стили при наведении курсора на checkbox */
+.filter__label > input:not(:disabled):not(:checked) + span:hover::before {
+  border: 0.7px solid #585757;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.filter__label > input:not(:disabled):active + span::before {
+  border: 0.7px solid #c1c1c1;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.filter__label > input:focus + span::before {
+  border: 0.7px solid #585757;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.filter__label > input:checked + span::before {
+  background-image: url("../img/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.filter__label > input:disabled + span::before {
+  background: #f7f3f3;
+  border: 0.7px solid #dddddd;
+}
+
+.filter__label > input:disabled + span {
+  color: #dddddd;
+}
