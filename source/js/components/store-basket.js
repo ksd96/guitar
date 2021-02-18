@@ -12,21 +12,21 @@ export default class StoreBasket {
   }
 
   addGuitar(guitar) {
-    if (this.guitars[guitar.id]) {
-      this.guitars[guitar.id].count++;
+    if (this.guitars[guitar.article]) {
+      this.guitars[guitar.article].count++;
     } else {
       guitar.count = 1;
-      this.guitars[guitar.id] = guitar;
+      this.guitars[guitar.article] = guitar;
     }
   }
 
-  deleteGuitar(id, all) {
+  deleteGuitar(article, all) {
     if (all === true) {
-      delete this.guitars[id];
-    } else if (all === false && this.guitars[id].count >= 2) {
-      this.guitars[id].count--;
+      delete this.guitars[article];
+    } else if (all === false && this.guitars[article].count >= 2) {
+      this.guitars[article].count--;
     } else {
-      delete this.guitars[id];
+      delete this.guitars[article];
     }
   }
 }

@@ -8,6 +8,7 @@ import StoreBasket from './components/store-basket';
 import ViewBasket from './components/view-basket';
 import PresenterBasket from './components/presenter-basket';
 
+// localStorage.removeItem(`guitarsBasket`);
 if (localStorage.getItem(`guitarsBasket`) === null) {
   localStorage.setItem(`guitarsBasket`, JSON.stringify({data: {}}));
 }

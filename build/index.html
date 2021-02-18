@@ -61,7 +61,11 @@
       </div>
     </div>
     <div class="header__image-wrapper">
-      <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image" width="828" height="296">
+      <picture class="header__picture">
+        <source class="header__guitar-image-webp" type="image/webp" srcset="./img/guitar-header.webp">
+
+        <img src="./img/guitar-header.png" alt="Гитара" class="header__guitar-image" width="828" height="296">
+      </picture>
     </div>
   </header>
   <main class="main">
@@ -248,9 +252,9 @@
             <div class="filter__price">
               <h3 class="filter__title-item">Цена, ₽</h3>
               <div class="filter__price-wrapper">
-                <input type="text" class="filter__price-input filter__price-input_type_min">
+                <input type="number" class="filter__price-input filter__price-input_type_min">
                 <span class="filter__price-span"></span>
-                <input type="text" class="filter__price-input filter__price-input_type_max">
+                <input type="number" class="filter__price-input filter__price-input_type_max">
               </div>
             </div>
             <div class="filter__type">
@@ -310,7 +314,11 @@
       </button>
       <h2 class="popup__title">Добавить товар в корзину</h2>
       <div class="popup__wrapper">
-        <img src="#" alt="Фото гитары" class="popup__img" width="56" height="128">
+        <picture class="popup__picture">
+          <source class="popup__img-webp" type="image/webp" srcset="#">
+
+          <img src="#" alt="Фото гитары" class="popup__img" width="56" height="128">
+        </picture>
         <div class="popup__info">
           <h3 class="popup__guitar-title">ГИТАРА <span class="popup__guitar-name"></span></h3>
           <p class="popup__article">Артикул: <span class="popup__guitar-article"></span></p>
@@ -335,7 +343,11 @@
   </template>
   <template id="cardTemplate">
     <div class="card">
-      <img class="card__image" src="#" alt="гитара" width="68" height="190">
+      <picture class="card__picture">
+        <source class="card__image-webp" type="image/webp" srcset="#">
+
+        <img class="card__image" src="#" alt="гитара" width="68" height="190">
+      </picture>
       <div class="card__rating-wrapper">
         <svg class="card__star" width="10" height="10"><use xlink:href="#icon-star"></use></svg>
         <svg class="card__star" width="10" height="10"><use xlink:href="#icon-star"></use></svg>
@@ -372,7 +384,11 @@
       <button class="guitar__delete" type="button">
         <svg class="guitar__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
       </button>
-      <img src="#" alt="фото гитары" class="guitar__img" width="48" height="124">
+      <picture class="card__picture">
+        <source class="guitar__img-webp" type="image/webp" srcset="#">
+
+        <img src="#" alt="фото гитары" class="guitar__img" width="48" height="124">
+      </picture>
       <div class="guitar__wrapper">
         <h3 class="guitar__title">ГИТАРА <span class="guitar__name"></span></h3>
         <p class="guitar__article">Артикул: <span class="guitar__article-content"></span></p>

@@ -21,9 +21,9 @@ export default class PresenterBasket {
     Object.values(this.store.getGuitars()).forEach((item) => {
       quantity = quantity + item.count;
     });
-    if (quantity === 0) {
+    if (buttonIndicator && quantity === 0) {
       buttonIndicator.textContent = ``;
-    } else {
+    } else if (buttonIndicator) {
       buttonIndicator.textContent = quantity;
     }
   }
@@ -31,21 +31,26 @@ export default class PresenterBasket {
   _initPromo() {
     const form = document.querySelector(`.basket__code-wrapper`);
     const code = document.querySelector(`.basket__code`);
-    form.addEventListener(`submit`, (evt) => {
-      this._code = code.value;
-      this._codeCheck(evt, this._code);
-      code.value = ``;
-    });
+    if (form) {
+      form.addEventListener(`submit`, (evt) => {
+        this._code = code.value;
+        this._codeCheck(evt, this._code);
+        code.value = ``;
+      });
+    }
   }
 
   _renderBasketGuitars() {
     this.view.renderBasketCards(Object.values(this.store.getGuitars()), this._deleteGuitar, this._addGuitar);
   }
 
-  _deleteGuitar(evt, id, all) {
-    this.store.deleteGuitar(id, all);
+  _deleteGuitar(evt, article, all) {
+    this.store.deleteGuitar(article, all);
     this._renderBasketGuitars();
-    this.api.deleteGuitar(id, all);
+    // this.api.deleteGuitar(article, all);
+
+    this.api.setCardsBasket(this.store.getGuitars());
+
     this._getAllPrice();
     this._codeCheck(evt, this._code);
     this._getNumberGuitars();
@@ -54,7 +59,10 @@ export default class PresenterBasket {
   _addGuitar(evt, guitar) {
     this.store.addGuitar(guitar);
     this._renderBasketGuitars();
-    this.api.addCardInBasket(guitar);
+    // this.api.addCardInBasket(guitar);
+
+    this.api.setCardsBasket(this.store.getGuitars());
+
     this._getAllPrice();
     this._codeCheck(evt, this._code);
     this._getNumberGuitars();
@@ -63,27 +71,32 @@ export default class PresenterBasket {
   _getAllPrice() {
     const allPrice = document.querySelector(`.basket__all-price`);
     const priceItems = document.querySelectorAll(`.guitar__full-price-content`);
-    allPrice.textContent = ``;
-    priceItems.forEach((item) => {
-      allPrice.textContent = Number(allPrice.textContent) + Number(item.textContent);
-    });
+    if (priceItems && allPrice) {
+      allPrice.textContent = ``;
+      priceItems.forEach((item) => {
+        allPrice.textContent = Number(allPrice.textContent) + Number(item.textContent);
+      });
+    }
   }
 
   _codeCheck(evt, code) {
     evt.preventDefault();
     const allPrice = document.querySelector(`.basket__all-price`);
     const button = document.querySelector(`.basket__code-submit`);
-    if (code === `GITARAHIT`) {
+    const GITARAHIT = `GITARAHIT`;
+    const SUPERGITARA = `SUPERGITARA`;
+    const GITARA2020 = `GITARA2020`;
+    if (code === GITARAHIT) {
       allPrice.textContent = (Number(allPrice.textContent) * 90) / 100;
       button.disabled = true;
-    } else if (code === `SUPERGITARA`) {
+    } else if (code === SUPERGITARA) {
       if (Number(allPrice.textContent) >= 700) {
         allPrice.textContent = Number(allPrice.textContent) - 700;
       } else {
         allPrice.textContent = 0;
       }
       button.disabled = true;
-    } else if (code === `GITARA2020`) {
+    } else if (code === GITARA2020) {
       let number = (Number(allPrice.textContent) * 30) / 100;
       if (number < 3500) {
         allPrice.textContent = Number(allPrice.textContent) - number;

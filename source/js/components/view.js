@@ -6,7 +6,8 @@ export default class View {
     clone.querySelector(`.card__title`).textContent = guitar.name;
     clone.querySelector(`.card__price-content`).textContent = guitar.price;
     clone.querySelector(`.card__rating`).textContent = guitar.popularity;
-    clone.querySelector(`.card__image`).src = guitar.img;
+    clone.querySelector(`.card__image`).src = `${guitar.img}.png`;
+    clone.querySelector(`.card__image-webp`).srcset = `${guitar.img}.webp`;
     clone.querySelector(`.card__button_type_buy`).addEventListener(`click`, () => {
       this.renderPopup(guitar, clickHandler);
     });
@@ -70,7 +71,8 @@ export default class View {
     clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
     clone.querySelector(`.popup__guitar-type`).textContent = guitar.type;
     clone.querySelector(`.popup__guitar-strings`).textContent = guitar.strings;
-    clone.querySelector(`.popup__img`).src = guitar.img;
+    clone.querySelector(`.popup__img`).src = `${guitar.img}.png`;
+    clone.querySelector(`.popup__img-webp`).srcset = `${guitar.img}.webp`;
     clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
       overlay.classList.remove(`overlay_opened`);
       page.classList.remove(`page_no-scrole`);
@@ -99,7 +101,7 @@ export default class View {
   }
 
   // получение элемента фильтра
-  _getFilterItemType(filter, name, clickHandler1, clickHandler2) {
+  _getFilterItemType(filter, name, clickHandler1, clickHandler2, clickHandler3) {
     const template = document.querySelector(`#filterItemTemplate`);
     const clone = template.content.cloneNode(true);
     clone.querySelector(`.filter__name`).textContent = filter;
@@ -112,6 +114,12 @@ export default class View {
       clone.querySelector(`.filter__input`).addEventListener(`click`, () => {
         if (clickHandler1) {
           clickHandler1();
+        }
+      });
+    } else if (name === `numbers`) {
+      clone.querySelector(`.filter__input`).addEventListener(`click`, () => {
+        if (clickHandler3) {
+          clickHandler3();
         }
       });
     }
@@ -133,13 +141,13 @@ export default class View {
   }
 
   // отрисовка элемента фильтра
-  renderFilterItems(filter, container, name, clickHandler1, clickHandler2) {
+  renderFilterItems(filter, container, name, clickHandler1, clickHandler2, clickHandler3) {
     while (container.firstChild) {
       container.removeChild(container.lastChild);
     }
 
     filter.forEach((item) => {
-      const card = this._getFilterItemType(item, name, clickHandler1, clickHandler2);
+      const card = this._getFilterItemType(item, name, clickHandler1, clickHandler2, clickHandler3);
       container.appendChild(card);
     });
   }

@@ -24,34 +24,13 @@ export default class API {
       });
   }
 
+  // получить содержимое корзины
   getCardsBasket() {
     const cardsBasket = JSON.parse(localStorage.getItem('guitarsBasket'));
     return cardsBasket.data;
   }
 
-  addCardInBasket(guitar) {
-    const dataBasket = JSON.parse(localStorage.getItem(`guitarsBasket`));
-    if (dataBasket.data[guitar.id]) {
-      dataBasket.data[guitar.id].count++;
-    } else {
-      guitar.count = 1;
-      dataBasket.data[guitar.id] = guitar;
-    }
-    localStorage.setItem(`guitarsBasket`, JSON.stringify(dataBasket));
-  }
-
-  deleteGuitar(id, all) {
-    const dataBasket = JSON.parse(localStorage.getItem(`guitarsBasket`));
-    if (all === true) {
-      delete dataBasket.data[id];
-    } else if (all === false && dataBasket.data[id].count >= 2) {
-      dataBasket.data[id].count--;
-    } else {
-      delete dataBasket.data[id];
-    }
-    localStorage.setItem(`guitarsBasket`, JSON.stringify(dataBasket));
-  }
-
+  // обновить содержиоме корзины
   setCardsBasket(guitars) {
     const dataBasket = JSON.parse(localStorage.getItem(`guitarsBasket`));
     dataBasket.data = guitars;

@@ -48,7 +48,8 @@ export default class ViewBasket {
     clone.querySelector(`.guitar__name`).textContent = guitar.name;
     clone.querySelector(`.guitar__price-content`).textContent = guitar.price;
     clone.querySelector(`.guitar__article-content`).textContent = guitar.article;
-    clone.querySelector(`.guitar__img`).src = guitar.img;
+    clone.querySelector(`.guitar__img`).src = `${guitar.img}.png`;
+    clone.querySelector(`.guitar__img-webp`).srcset = `${guitar.img}.webp`;
     clone.querySelector(`.guitar__type-content`).textContent = guitar.type;
     clone.querySelector(`.guitar__strings`).textContent = guitar.strings;
     clone.querySelector(`.guitar__quantity`).textContent = guitar.count;
@@ -63,7 +64,7 @@ export default class ViewBasket {
       if (guitar.count === 1) {
         this.renderPopup(guitar, clickHandler1);
       } else {
-        clickHandler1(evt, guitar.id, false);
+        clickHandler1(evt, guitar.article, false);
       }
     });
     return clone;
@@ -96,7 +97,8 @@ export default class ViewBasket {
     clone.querySelector(`.popup__guitar-article`).textContent = guitar.article;
     clone.querySelector(`.popup__guitar-type`).textContent = guitar.type;
     clone.querySelector(`.popup__guitar-strings`).textContent = guitar.strings;
-    clone.querySelector(`.popup__img`).src = guitar.img;
+    clone.querySelector(`.popup__img`).src = `${guitar.img}.png`;
+    clone.querySelector(`.popup__img-webp`).srcset = `${guitar.img}.webp`;
     clone.querySelector(`.popup__close`).addEventListener(`click`, () => {
       overlay.classList.remove(`overlay_opened`);
       page.classList.remove(`page_no-scrole`);
@@ -108,7 +110,7 @@ export default class ViewBasket {
     clone.querySelector(`.popup__button_type_delete`).addEventListener(`click`, (evt) => {
       overlay.classList.remove(`overlay_opened`);
       page.classList.remove(`page_no-scrole`);
-      clickhandler(evt, guitar.id, true);
+      clickhandler(evt, guitar.article, true);
     });
     return clone;
   }

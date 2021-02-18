@@ -75,6 +75,12 @@ export default class Store {
     return new Set(types);
   }
 
+    // отдает существующие типы гитар из определенного массива
+  getTypesGuitarArray(array) {
+    const types = array.map((guitar) => guitar.type);
+    return new Set(types);
+  }
+
   // отдает существующие типы гитар по количеству струн
   getStringsGuitar() {
     const strings = Object.values(this.guitars).map((guitar) => guitar.strings);
@@ -102,7 +108,7 @@ export default class Store {
   // фильтрует по типу
   filteringByType(cards, types) {
     if (types.length === 0) {
-      return cards;
+      return Object.values(cards);
     } else {
       const guitars = [];
       types.forEach((type) => {
@@ -119,7 +125,7 @@ export default class Store {
   // фильтрует по колличеству струн
   filteringByStrings(cards, strings) {
     if (strings.length === 0) {
-      return cards;
+      return Object.values(cards);
     } else {
       const guitars = [];
       strings.forEach((item) => {
@@ -151,6 +157,20 @@ export default class Store {
   getFilteredGuitars() {
     let filteredCards = this.guitars;
     filteredCards = this.filteringByType(filteredCards, this.filters.type);
+    filteredCards = this.filteringByStrings(filteredCards, this.filters.strings);
+    filteredCards = this.filteringByPrice(filteredCards, this.filters.price.min, this.filters.price.max);
+    return filteredCards;
+  }
+
+  getFilteredGuitarsTypes() {
+    let filteredCards = this.guitars;
+    filteredCards = this.filteringByType(filteredCards, this.filters.type);
+    filteredCards = this.filteringByPrice(filteredCards, this.filters.price.min, this.filters.price.max);
+    return filteredCards;
+  }
+
+  getFilteredGuitarsStrings() {
+    let filteredCards = this.guitars;
     filteredCards = this.filteringByStrings(filteredCards, this.filters.strings);
     filteredCards = this.filteringByPrice(filteredCards, this.filters.price.min, this.filters.price.max);
     return filteredCards;

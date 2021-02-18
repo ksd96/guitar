@@ -1,9 +1,13 @@
+import StoreBasket from './store-basket';
+
 export default class Presenter {
   constructor(store, view, api) {
     this.store = store;
     this.view = view;
     this.api = api;
-    this._clickFilterItem = this._clickFilterItem.bind(this);
+    this.basketItems = this.api.getCardsBasket();
+    this._clickFilterItemTypes = this._clickFilterItemTypes.bind(this);
+    this._clickFilterItemStrings = this._clickFilterItemStrings.bind(this);
     this._renderPageNumberCards = this._renderPageNumberCards.bind(this);
     this._addCardInBasket = this._addCardInBasket.bind(this);
     this._getFilteredGuitars = this._getFilteredGuitars.bind(this);
@@ -27,7 +31,9 @@ export default class Presenter {
 
   // добавление карточки в корзину
   _addCardInBasket(guitar) {
-    this.api.addCardInBasket(guitar);
+    const basket = new StoreBasket(this.basketItems);
+    basket.addGuitar(guitar);
+    this.api.setCardsBasket(basket.getGuitars());
     this._getNumberGuitars();
   }
 
@@ -43,8 +49,12 @@ export default class Presenter {
     this.priceMax = document.querySelector(`.filter__price-input_type_max`);
     this.buttonNextPage = document.querySelector(`.pages__button-next`);
     this._renderGuitars();
-    this._renderFilterItems(this.store.getFiltersValue().type, this.containerFilterType, `types`);
-    this._renderFilterItems(this.store.getFiltersValue().strings, this.containerFilterNum, `numbers`);
+    if (this.containerFilterType) {
+      this._renderFilterItems(this.store.getFiltersValue().type, this.containerFilterType, `types`);
+    }
+    if (this.containerFilterNum) {
+      this._renderFilterItems(this.store.getFiltersValue().strings, this.containerFilterNum, `numbers`);
+    }
     this._renderPrice();
     this._buttonsListner();
   }
@@ -53,12 +63,12 @@ export default class Presenter {
   _getNumberGuitars() {
     const buttonIndicator = document.querySelector(`.header__button-indicator`);
     let quantity = null;
-    Object.values(this.api.getCardsBasket()).forEach((item) => {
+    Object.values(this.basketItems).forEach((item) => {
       quantity = quantity + item.count;
     });
-    if (quantity === 0) {
+    if (buttonIndicator && quantity === 0) {
       buttonIndicator.textContent = ``;
-    } else {
+    } else if (buttonIndicator) {
       buttonIndicator.textContent = quantity;
     }
   }
@@ -95,33 +105,49 @@ export default class Presenter {
 
   // слушатели на кнопки
   _buttonsListner() {
-    this.buttonSortPrice.addEventListener(`click`, () => {
-      this._changeButtonsStates(this.buttonSortPrice, `sort__button-type`);
-      this._sortCardsByPrice();
-    });
-    this.buttonSortPopularity.addEventListener(`click`, () => {
-      this._changeButtonsStates(this.buttonSortPopularity, `sort__button-type`);
-      this._sortCardsByPopularity();
-    });
-    this.buttonSortMin.addEventListener(`click`, () => {
-      this._changeButtonsStates(this.buttonSortMin, `sort__button`);
-      this._sortCardsMinMax(`min`);
-    });
-    this.buttonSortMax.addEventListener(`click`, () => {
-      this._changeButtonsStates(this.buttonSortMax, `sort__button`);
-      this._sortCardsMinMax(`max`);
-    });
-    this.priceMin.addEventListener(`blur`, () => {
-      this._getFilteredGuitars();
-      this._clickFilterItem();
-    });
-    this.priceMax.addEventListener(`blur`, () => {
-      this._getFilteredGuitars();
-      this._clickFilterItem();
-    });
-    this.buttonNextPage.addEventListener(`click`, () => {
-      this._getNextPage();
-    });
+    if (this.buttonSortPrice) {
+      this.buttonSortPrice.addEventListener(`click`, () => {
+        this._changeButtonsStates(this.buttonSortPrice, `sort__button-type`);
+        this._sortCardsByPrice();
+      });
+    }
+    if (this.buttonSortPopularity) {
+      this.buttonSortPopularity.addEventListener(`click`, () => {
+        this._changeButtonsStates(this.buttonSortPopularity, `sort__button-type`);
+        this._sortCardsByPopularity();
+      });
+    }
+    if (this.buttonSortMin) {
+      this.buttonSortMin.addEventListener(`click`, () => {
+        this._changeButtonsStates(this.buttonSortMin, `sort__button`);
+        this._sortCardsMinMax(`min`);
+      });
+    }
+    if (this.buttonSortMax) {
+      this.buttonSortMax.addEventListener(`click`, () => {
+        this._changeButtonsStates(this.buttonSortMax, `sort__button`);
+        this._sortCardsMinMax(`max`);
+      });
+    }
+    if (this.priceMin) {
+      this.priceMin.addEventListener(`blur`, () => {
+        this._getFilteredGuitars();
+        this._clickFilterItemStrings();
+        this._clickFilterItemTypes();
+      });
+    }
+    if (this.priceMax) {
+      this.priceMax.addEventListener(`blur`, () => {
+        this._getFilteredGuitars();
+        this._clickFilterItemStrings();
+        this._clickFilterItemTypes();
+      });
+    }
+    if (this.buttonNextPage) {
+      this.buttonNextPage.addEventListener(`click`, () => {
+        this._getNextPage();
+      });
+    }
   }
 
   // отрисовка отфильтрованных гитар
@@ -141,7 +167,7 @@ export default class Presenter {
     } else if (this.buttonSortMax.classList.contains(`sort__button_active`)) {
       this.store.setSortPrice(`max`);
     }
-    this.view.renderCards(this.store.getSortPrice().slice(0, 9));
+    this.view.renderCards(this.store.getSortPrice().slice(0, 9), this._addCardInBasket);
     this._currentData = this.store.getSortPrice();
     this._renderPageItems(this._currentData);
   }
@@ -156,7 +182,7 @@ export default class Presenter {
     } else if (this.buttonSortMax.classList.contains(`sort__button_active`)) {
       this.store.setSortPopularity(`max`);
     }
-    this.view.renderCards(this.store.getSortPopularity().slice(0, 9));
+    this.view.renderCards(this.store.getSortPopularity().slice(0, 9), this._addCardInBasket);
     this._currentData = this.store.getSortPopularity();
     this._renderPageItems(this._currentData);
   }
@@ -166,12 +192,12 @@ export default class Presenter {
     if ((!this.buttonSortPrice.classList.contains(`sort__button-type_active`) && !this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) || this.buttonSortPrice.classList.contains(`sort__button-type_active`)) {
       this.buttonSortPrice.classList.add(`sort__button-type_active`);
       this.store.setSortPrice(value);
-      this.view.renderCards(this.store.getSortPrice().slice(0, 9));
+      this.view.renderCards(this.store.getSortPrice().slice(0, 9), this._addCardInBasket);
       this._currentData = this.store.getSortPrice();
       this._renderPageItems(this._currentData);
     } else if (this.buttonSortPopularity.classList.contains(`sort__button-type_active`)) {
       this.store.setSortPopularity(value);
-      this.view.renderCards(this.store.getSortPopularity().slice(0, 9));
+      this.view.renderCards(this.store.getSortPopularity().slice(0, 9), this._addCardInBasket);
       this._currentData = this.store.getSortPopularity();
       this._renderPageItems(this._currentData);
     }
@@ -187,59 +213,63 @@ export default class Presenter {
   }
 
   // валидация фильтра по типу гитар
-  _clickFilterItem() {
+  _clickFilterItemTypes() {
     this._setFilteredGuitars();
-    const typeGuitars = this.store.getStringsGuitarArray(this.store.getFilteredGuitars());
-    const typeGuitarsAll = document.querySelectorAll(`[name="numbers"]`);
+    const typeGuitars = this.store.getTypesGuitarArray(this.store.getFilteredGuitarsStrings());
+    const typeGuitarsAll = document.querySelectorAll(`[name="types"]`);
+
     typeGuitarsAll.forEach((item) => {
       item.disabled = true;
     });
     typeGuitars.forEach((item) => {
       typeGuitarsAll.forEach((item2) => {
-        if (item === +item2.value) {
+        if (item === item2.value) {
           item2.disabled = false;
         }
       });
     });
   }
 
+    // валидация фильтра по количеству струн
+    _clickFilterItemStrings() {
+      this._setFilteredGuitars();
+      const typeGuitars = this.store.getStringsGuitarArray(this.store.getFilteredGuitarsTypes());
+      const typeGuitarsAll = document.querySelectorAll(`[name="numbers"]`);
+      typeGuitarsAll.forEach((item) => {
+        item.disabled = true;
+      });
+      typeGuitars.forEach((item) => {
+        typeGuitarsAll.forEach((item2) => {
+          if (item === +item2.value) {
+            item2.disabled = false;
+          }
+        });
+      });
+    }
+
   // отрисовка фильтров по типу гитар и колличеству струн
   _renderFilterItems(filter, container, name) {
-    this.view.renderFilterItems(filter, container, name, this._clickFilterItem, this._getFilteredGuitars);
-  }
-
-  // нажатие только на цифры
-  _pressOnlyNumbers(event) {
-    if (event.keyCode === 46 || event.keyCode === 8 || event.keyCode === 9 || event.keyCode === 27 || (event.keyCode === 65 && event.ctrlKey === true) || (event.keyCode >= 35 && event.keyCode <= 39)) {
-      return;
-    } else {
-      if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
-        event.preventDefault();
-      }
-    }
+    this.view.renderFilterItems(filter, container, name, this._clickFilterItemStrings, this._getFilteredGuitars, this._clickFilterItemTypes);
   }
 
   // валидация фильтров по цене
   _priceFilterValid() {
-    this.priceMin.addEventListener(`blur`, () => {
-      if (+this.priceMin.value < +this.store.getMinGuitarsPrice()) {
-        this.priceMin.value = this.store.getMinGuitarsPrice();
-      } else if (+this.priceMin.value >= +this.priceMax.value) {
-        this.priceMin.value = this.priceMax.value;
-      }
-    });
-    this.priceMax.addEventListener(`blur`, () => {
-      if (+this.priceMax.value <= +this.priceMin.value) {
-        this.priceMax.value = this.priceMin.value;
-      }
-    });
-
-    this.priceMin.addEventListener('keydown', (event) => {
-      this._pressOnlyNumbers(event);
-    });
-    this.priceMax.addEventListener('keydown', (event) => {
-      this._pressOnlyNumbers(event);
-    });
+    if (this.priceMin) {
+      this.priceMin.addEventListener(`blur`, () => {
+        if (+this.priceMin.value < +this.store.getMinGuitarsPrice()) {
+          this.priceMin.value = this.store.getMinGuitarsPrice();
+        } else if (+this.priceMin.value >= +this.priceMax.value) {
+          this.priceMin.value = this.priceMax.value;
+        }
+      });
+    }
+    if (this.priceMax) {
+      this.priceMax.addEventListener(`blur`, () => {
+        if (+this.priceMax.value <= +this.priceMin.value) {
+          this.priceMax.value = this.priceMin.value;
+        }
+      });
+    }
   }
 
   // применение фильтров
@@ -264,8 +294,12 @@ export default class Presenter {
 
   // заполение минимального и максимального значений цены
   _renderPrice() {
-    this.priceMin.value = this.store.getFiltersValue().priceMin;
-    this.priceMax.value = this.store.getFiltersValue().priceMax;
+    if (this.priceMin) {
+      this.priceMin.value = this.store.getFiltersValue().priceMin;
+    }
+    if (this.priceMax) {
+      this.priceMax.value = this.store.getFiltersValue().priceMax;
+    }
     this._priceFilterValid();
   }
 
