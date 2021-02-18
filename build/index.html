@@ -6,9 +6,9 @@
   <meta name="description" content="Сайт по продаже гитар">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Guitar Shop</title>
-  <link rel="stylesheet" href="css/style.min.css">
-  <link rel="preload" href="fonts/DroidSans.woff" as="font">
   <link rel="preload" href="fonts/DroidSans-Bold.woff" as="font">
+  <link rel="preload" href="fonts/DroidSans.woff" as="font">
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body class="page">
   <div class="page__sprite">
@@ -342,7 +342,7 @@
     </div>
   </template>
   <template id="cardTemplate">
-    <div class="card">
+    <li class="card">
       <picture class="card__picture">
         <source class="card__image-webp" type="image/webp" srcset="#">
 
@@ -364,7 +364,7 @@
         <button class="card__button card__button_type_more" type="button">Подробнее</button>
         <button class="card__button card__button_type_buy" type="button">Купить</button>
       </div>
-    </div>
+    </li>
   </template>
   <template id="filterItemTemplate">
     <li class="filter__item">

@@ -901,6 +901,33 @@
     }
   }
 
+  const promoCodes = {
+    "GITARAHIT": function(summ) {
+      if (typeof summ === `number` && summ !== 0) {
+        return (Number(summ) * 90) / 100;
+      }
+    },
+    "SUPERGITARA": function(summ) {
+      if (typeof summ === `number` && summ !== 0) {
+        if (summ >= 700) {
+          return Number(summ) - 700;
+        } else {
+          return 0;
+        }
+      }
+    },
+    "GITARA2020": function(summ) {
+      if (typeof summ === `number` && summ !== 0) {
+        let number = (Number(summ) * 30) / 100;
+        if (number < 3500) {
+          return Number(summ) - number;
+        } else {
+          return Number(summ) - 3500;
+        }
+      }
+    }
+  };
+
   class PresenterBasket {
     constructor(store, view, api) {
       this.store = store;
@@ -950,10 +977,7 @@
     _deleteGuitar(evt, article, all) {
       this.store.deleteGuitar(article, all);
       this._renderBasketGuitars();
-      // this.api.deleteGuitar(article, all);
-
       this.api.setCardsBasket(this.store.getGuitars());
-
       this._getAllPrice();
       this._codeCheck(evt, this._code);
       this._getNumberGuitars();
@@ -962,10 +986,7 @@
     _addGuitar(evt, guitar) {
       this.store.addGuitar(guitar);
       this._renderBasketGuitars();
-      // this.api.addCardInBasket(guitar);
-
       this.api.setCardsBasket(this.store.getGuitars());
-
       this._getAllPrice();
       this._codeCheck(evt, this._code);
       this._getNumberGuitars();
@@ -986,28 +1007,9 @@
       evt.preventDefault();
       const allPrice = document.querySelector(`.basket__all-price`);
       const button = document.querySelector(`.basket__code-submit`);
-      const GITARAHIT = `GITARAHIT`;
-      const SUPERGITARA = `SUPERGITARA`;
-      const GITARA2020 = `GITARA2020`;
-      if (code === GITARAHIT) {
-        allPrice.textContent = (Number(allPrice.textContent) * 90) / 100;
+      if (Object.keys(promoCodes).includes(code)) {
+        allPrice.textContent = promoCodes[code](Number(allPrice.textContent));
         button.disabled = true;
-      } else if (code === SUPERGITARA) {
-        if (Number(allPrice.textContent) >= 700) {
-          allPrice.textContent = Number(allPrice.textContent) - 700;
-        } else {
-          allPrice.textContent = 0;
-        }
-        button.disabled = true;
-      } else if (code === GITARA2020) {
-        let number = (Number(allPrice.textContent) * 30) / 100;
-        if (number < 3500) {
-          allPrice.textContent = Number(allPrice.textContent) - number;
-          button.disabled = true;
-        } else {
-          allPrice.textContent = Number(allPrice.textContent) - 3500;
-          button.disabled = true;
-        }
       } else if (code === ``) {
         this.view.renderPopupCode(`Введите промокод`);
       } else if (code === null) {
