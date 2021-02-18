@@ -1018,7 +1018,12 @@
     }
   }
 
-  // localStorage.removeItem(`guitarsBasket`);
+  // нужно для сброса прошлый данных из guitarsBasket
+  if (localStorage.getItem(`init`) === null) {
+    localStorage.setItem(`init`, `ok`);
+    localStorage.removeItem(`guitarsBasket`);
+  }
+
   if (localStorage.getItem(`guitarsBasket`) === null) {
     localStorage.setItem(`guitarsBasket`, JSON.stringify({data: {}}));
   }
