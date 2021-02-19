@@ -1032,7 +1032,7 @@
 
   const api = new API(`./js/data.json`);
 
-  if (window.location.pathname === `/basket.html`) {
+  if (window.location.pathname.includes(`basket`)) {
     const basketStore = new StoreBasket(api.getCardsBasket());
     const basketView = new ViewBasket();
     const basketPresenter = new PresenterBasket(basketStore, basketView, api);
