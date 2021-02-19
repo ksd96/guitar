@@ -128,6 +128,7 @@ export default class ViewBasket {
 
       const popup = this._getBasketPopup(guitar, clickhandler);
       container.appendChild(popup);
+      document.querySelector(`.popup__button_type_delete`).focus();
     }
 
   // отрисовка элемента корзины

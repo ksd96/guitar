@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Сайт по продаже гитар">
   <title>Guitar Shop: корзина</title>
   <link rel="preload" href="fonts/DroidSans.woff" as="font" type="font/woff" crossorigin="">
   <link rel="preload" href="fonts/DroidSans-Bold.woff" as="font" type="font/woff" crossorigin="">
@@ -20,7 +21,7 @@
   <header class="header">
     <div class="header__wrapper-top">
       <div class="header__wrapper">
-        <a class="header__logo-link">
+        <a class="header__logo-link" href="#">
           <svg class="header__logo" width="67" height="70"><use xlink:href="#logo"></use></svg>
         </a>
         <nav class="header__nav">
@@ -41,11 +42,11 @@
         </nav>
         <ul class="header__buttons-list">
           <li class="header__buttons-item">
-            <a href="#" class="header__button">
+            <a href="#" class="header__button" title="ссылка к странице с картой">
               <svg class="header__button-icon" width="14" height="17"><use xlink:href="#icon-map"></use></svg>
             </a>
           </li>
-          <li class="header__buttons-item">
+          <li class="header__buttons-item" title="ссылка к странице с поиском">
             <a href="#" class="header__button">
               <svg class="header__button-icon" width="14" height="14"><use xlink:href="#icon-search"></use></svg>
             </a>
@@ -78,7 +79,7 @@
           <a href="./index.html" class="main__link">Каталог</a>
         </li>
         <li class="main__links-item">
-          <a href="#" class="main__link">Оформляем</a>
+          <a class="main__link">Оформляем</a>
         </li>
       </ul>
     </div>
@@ -91,7 +92,8 @@
             <h2 class="basket__title">Промокод на скидку</h2>
             <p class="basket__subtitle">Введите свой промокод, если он у вас есть.</p>
             <form class="basket__code-wrapper" name="form-code">
-              <input type="text" class="basket__code" name="code">
+              <label for="code" class="visually-hidden"></label>
+              <input id="code" type="text" class="basket__code" name="code">
               <button class="basket__code-submit" type="submit">Применить купон</button>
             </form>
           </div>
@@ -180,7 +182,7 @@
               <span class="footer__span">г. Санкт-Петербург,</span>
               <span class="footer__span">м. Невский проспект,</span>
               <span class="footer__span">ул. Казанская 6. </span>
-              <span class="footer__span footer__span_type_phone">8-812-500-50-50</span>
+              <a class="footer__span footer__span_type_phone" href="tel:+78125005050">8-812-500-50-50</a>
             </p>
             <p class="footer__contacts-text">
               <span class="footer__span">Режим работы:</span>
@@ -196,7 +198,7 @@
   </div>
   <template id="cardBasketTemplate">
     <li class="basket__item guitar">
-      <button class="guitar__delete" type="button">
+      <button class="guitar__delete" type="button" aria-label="кнопка удаления гитары">
         <svg class="guitar__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
       </button>
       <picture class="guitar__picture">
@@ -205,9 +207,9 @@
         <img src="#" alt="фото гитары" class="guitar__img" width="48" height="124">
       </picture>
       <div class="guitar__wrapper">
-        <h3 class="guitar__title">ГИТАРА <span class="guitar__name"></span></h3>
+        <h2 class="guitar__title">ГИТАРА <span class="guitar__name"></span></h2>
         <p class="guitar__article">Артикул: <span class="guitar__article-content"></span></p>
-        <p class="guitar__type"><span class="guitar__type-content"></span>, <span class="guitar__strings"></span></p>
+        <p class="guitar__type"><span class="guitar__type-content"></span>, <span class="guitar__strings"></span> струнная</p>
       </div>
       <p class="guitar__price"><span class="guitar__price-content"></span> ₽</p>
       <div class="guitar__buttons">
@@ -220,9 +222,6 @@
   </template>
   <template id="popupBasketTemplate">
     <div class="popup popup_basket">
-      <button class="popup__close" type="button">
-        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
-      </button>
       <h2 class="popup__title">Удалить этот товар?</h2>
       <div class="popup__wrapper">
         <picture class="popup__picture">
@@ -240,6 +239,9 @@
           <button class="popup__button popup__button_type_delete" type="button">Удалить товар</button>
           <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
         </div>
+        <button class="popup__close" type="button">
+          <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+        </button>
       </div>
     </div>
   </template>

@@ -246,6 +246,7 @@
       const clone = template.content.cloneNode(true);
       const overlay = document.querySelector(`.overlay`);
       const page = document.querySelector(`.page`);
+      clone.querySelector(`.popup__button_type_go-shoping`).focus();
       clone.querySelector(`.popup__button_type_go-shoping`).addEventListener(`click`, () => {
         overlay.classList.remove(`overlay_opened`);
         page.classList.remove(`page_no-scrole`);
@@ -307,6 +308,7 @@
         this.renderPopupAdded();
         clickHandler(guitar);
       });
+      clone.querySelector(`.popup__button`).focus();
       return clone;
     }
 
@@ -324,6 +326,7 @@
 
       const popup = this._getPopup(guitar, clickHandler);
       container.appendChild(popup);
+      document.querySelector(`.popup__button`).focus();
     }
 
     // получение элемента фильтра
@@ -886,6 +889,7 @@
 
         const popup = this._getBasketPopup(guitar, clickhandler);
         container.appendChild(popup);
+        document.querySelector(`.popup__button_type_delete`).focus();
       }
 
     // отрисовка элемента корзины

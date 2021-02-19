@@ -20,6 +20,7 @@ export default class View {
     const clone = template.content.cloneNode(true);
     const overlay = document.querySelector(`.overlay`);
     const page = document.querySelector(`.page`);
+    clone.querySelector(`.popup__button_type_go-shoping`).focus();
     clone.querySelector(`.popup__button_type_go-shoping`).addEventListener(`click`, () => {
       overlay.classList.remove(`overlay_opened`);
       page.classList.remove(`page_no-scrole`);
@@ -81,6 +82,7 @@ export default class View {
       this.renderPopupAdded();
       clickHandler(guitar);
     });
+    clone.querySelector(`.popup__button`).focus();
     return clone;
   }
 
@@ -98,6 +100,7 @@ export default class View {
 
     const popup = this._getPopup(guitar, clickHandler);
     container.appendChild(popup);
+    document.querySelector(`.popup__button`).focus();
   }
 
   // получение элемента фильтра

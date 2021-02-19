@@ -1,4 +1,7 @@
 .footer__span_type_phone {
+  color: #ffffff;
+  text-decoration: none;
+
   &::before {
     content: url("../img/icon-phone.svg");
 

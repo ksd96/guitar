@@ -21,7 +21,7 @@
   <header class="header">
     <div class="header__wrapper-top">
       <div class="header__wrapper">
-        <a class="header__logo-link">
+        <a class="header__logo-link" href="#">
           <svg class="header__logo" width="67" height="70"><use xlink:href="#logo"></use></svg>
         </a>
         <nav class="header__nav">
@@ -76,7 +76,7 @@
           <a href="#" class="main__link">Главная</a>
         </li>
         <li class="main__links-item">
-          <a href="#" class="main__link">Каталог</a>
+          <a class="main__link">Каталог</a>
         </li>
       </ul>
     </div>
@@ -96,25 +96,11 @@
           </div>
           <div class="filter__type">
             <h3 class="filter__title-item">Тип гитар</h3>
-            <ul class="filter__list filter__list_type">
-              <li class="filter__item">
-                <label class="filter__label">
-                  <input type="checkbox" class="filter__input">
-                  <p class="filter__name">Акустические гитары</p>
-                </label>
-              </li>
-            </ul>
+            <ul class="filter__list filter__list_type"></ul>
           </div>
           <div class="filter__type">
             <h3 class="filter__title-item">Колличество струн</h3>
-            <ul class="filter__list filter__list_numbers">
-              <li class="filter__item">
-                <label class="filter__label">
-                  <input type="checkbox" class="filter__input">
-                  <p class="filter__name">4</p>
-                </label>
-              </li>
-            </ul>
+            <ul class="filter__list filter__list_numbers"></ul>
           </div>
         </form>
       </section>
@@ -221,7 +207,7 @@
               <span class="footer__span">г. Санкт-Петербург,</span>
               <span class="footer__span">м. Невский проспект,</span>
               <span class="footer__span">ул. Казанская 6. </span>
-              <span class="footer__span footer__span_type_phone">8-812-500-50-50</span>
+              <a class="footer__span footer__span_type_phone" href="tel:+78125005050">8-812-500-50-50</a>
             </p>
             <p class="footer__contacts-text">
               <span class="footer__span">Режим работы:</span>
@@ -234,16 +220,16 @@
     </div>
   </footer>
   <div class="overlay ">
-      <div class="popup popup_added">
-          <button class="popup__close" type="button">
-            <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
-          </button>
-          <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
-          <div class="popup__wrapper popup__wrapper_added">
-            <a href="#" class="popup__button popup__button_type_go-basket">Перейти в корзину</a>
-            <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
-          </div>
-        </div>
+    <div class="popup popup_added">
+      <button class="popup__close" type="button">
+         <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
+      <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
+      <div class="popup__wrapper popup__wrapper_added">
+        <a href="#" class="popup__button popup__button_type_go-basket">Перейти в корзину</a>
+        <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
+      </div>
+    </div>
   </div>
   <template id="catalogTemplate">
       <section class="filters">
@@ -309,9 +295,6 @@
   </template>
   <template id="popupTemplate">
     <div class="popup">
-      <button class="popup__close" type="button">
-        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
-      </button>
       <h2 class="popup__title">Добавить товар в корзину</h2>
       <div class="popup__wrapper">
         <picture class="popup__picture">
@@ -326,19 +309,22 @@
           <p class="popup__price">Цена: <span class="popup__guitar-price"></span>  ₽</p>
         </div>
         <button class="popup__button" type="button">Добавить в корзину</button>
+        <button class="popup__close" type="button">
+          <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+        </button>
       </div>
     </div>
   </template>
   <template id="popupAddedTemplate">
     <div class="popup popup_added">
-      <button class="popup__close" type="button">
-        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
-      </button>
       <h2 class="popup__title">Товар успешно добавлен в корзину</h2>
       <div class="popup__wrapper popup__wrapper_added">
         <a href="./basket.html" class="popup__button popup__button_type_go-basket" type="button">Перейти в корзину</a>
         <button class="popup__button popup__button_type_go-shoping" type="button">Продолжить покупки</button>
       </div>
+      <button class="popup__close" type="button">
+        <svg class="popup__icon" width="11.5" height="11.5"><use xlink:href="#icon-close"></use></svg>
+      </button>
     </div>
   </template>
   <template id="cardTemplate">
