@@ -18,7 +18,7 @@ if (localStorage.getItem(`guitarsBasket`) === null) {
   localStorage.setItem(`guitarsBasket`, JSON.stringify({data: {}}));
 }
 
-const api = new API(`/js/data.json`);
+const api = new API(`./js/data.json`);
 
 if (window.location.pathname === `/basket.html`) {
   const basketStore = new StoreBasket(api.getCardsBasket());
